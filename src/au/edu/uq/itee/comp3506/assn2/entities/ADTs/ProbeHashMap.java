@@ -3,30 +3,66 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
-    private int size;
-    private int numEntries = 0;
+    private int size = 1000; // Initial size of the array map to initialize.
+    private int numEntries = 0; // Number of key-value pairs.
 
-    private final MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null);
-    private MapEntry<K, V>[] map;
+    private final MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null); // Sentinel Entry.
+    private MapEntry<K, V>[] map; // Map to store data.
 
-    public ProbeHashMap(int size) {
-        this.size = size;
+
+    /**
+     * Linear-probing Hashmap.
+     * Uses the hashcode value of the given key to store determine the position
+     * in the array to store the key-value pair. If a key is already using a
+     * given location it scans forward to the next available spot.
+     *
+     * Memory efficiency: O(n)
+     *
+     * TODO Implement auto-resizing and update tests.
+     *
+     */
+    public ProbeHashMap() {
         map = new MapEntry[size];
     }
 
 
+    /**
+     * Returns the amount of entities the map has.
+     *
+     * Runtime Efficiency: O(1)
+     *
+     * @return number of key-value pairs stored.
+     */
     @Override
     public int size() {
         return numEntries;
     }
 
 
+    /**
+     * Checks if the Hashmap is empty.
+     *
+     * Runtime Efficiency: O(1)
+     *
+     * @return true if no key-value pairs in Map.
+     */
     @Override
     public boolean isEmpty() {
         return size() == 0;
     }
 
 
+    /**
+     * Retrieves a value associated with a key.
+     *
+     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     *
+     * @param key
+     *      the key to search for.
+     * @return
+     *      Value associated with key.
+     *      Null if key does not exist.
+     */
     @Override
     public V get(K key) {
         int pos = findAvailablePosition(key);
@@ -38,10 +74,24 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     }
 
 
+    /**
+     * Stores a key-value pair.
+     *
+     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     *
+     * @param key
+     *      Key to store
+     * @param value
+     *      Value to store
+     * @return
+     *      Old value associated with the key.
+     *      Null otherwise.
+     */
     @Override
     public V put(K key, V value) {
         int pos = findAvailablePosition(key);
         if (pos == -1 && map[-pos] != DEFUNCT) {
+            // TODO resizing here.
             return null;
         }
         if (pos < 0) {
@@ -61,6 +111,17 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     }
 
 
+    /**
+     * Removes a key-value pair from the map.
+     *
+     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     *
+     * @param key
+     *      Key to search for.
+     * @return
+     *      Value removed from the map associated with given key.
+     *      Null otherwise.
+     */
     @Override
     public V remove(K key) {
         int pos = findAvailablePosition(key);
@@ -79,11 +140,34 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     }
 
 
+    /**
+     * Checks if a spot is available.
+     *
+     * Runtime Efficiency: O(1)
+     *
+     * @param pos
+     *      Position to check.
+     * @return
+     *      True of a sentinal is in place or value is null.
+     */
     private boolean isAvailable(int pos) {
         return map[pos] == DEFUNCT || map[pos] == null;
     }
 
 
+    /**
+     * Linear-probing process to find the next available spot in
+     * the map.
+     *
+     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     *
+     * @param key
+     *      key used to find the initial position in the map.
+     * @return
+     *      Next available position.
+     *      -1 if no spot is available
+     *      Negative value if DEFUNCT is found.
+     */
     private int findAvailablePosition(K key) {
         int home = key.hashCode() % size;
         int noSpots = -1;
