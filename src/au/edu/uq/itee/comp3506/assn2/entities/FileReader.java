@@ -72,7 +72,7 @@ public class FileReader {
         List<Integer> switches = new ArrayList<>();
 
         try {
-            inputLines = readFile("switches.txt");
+            inputLines = readFile(SWITCHES_FILE);
         } catch (IOException e) {
             System.err.println("File failed to read.");
             e.printStackTrace();
