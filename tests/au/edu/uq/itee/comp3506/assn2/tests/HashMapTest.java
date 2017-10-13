@@ -10,7 +10,7 @@ public class HashMapTest {
 
     @Before
     public void setupHashMap() {
-        map = new ProbeHashMap<>(2);
+        map = new ProbeHashMap<>();
     }
 
 
@@ -20,7 +20,8 @@ public class HashMapTest {
         assertEquals("Entry was not added to map.", 1, map.size());
         map.put("World", 1);
         assertEquals("Entry was not added to map.", 2, map.size());
-        assertEquals("Map is full", map.put("test", 0), null);
+        map.put("HelloWorld", 5);
+        assertEquals("Map should have resized.", 3, map.size());
         assertEquals("Old value expected", 0, (int) map.put("Hello", 5));
         assertEquals("Old value expected", 5, (int) map.put("Hello", 10));
     }
@@ -28,7 +29,7 @@ public class HashMapTest {
 
     @Test
     public void putWithSameKeyHashCode() {
-        ProbeHashMap<Integer, String> map = new ProbeHashMap<>(2);
+        ProbeHashMap<Integer, String> map = new ProbeHashMap<>();
         map.put(0, "Hello");
         assertEquals("Entry was not added to map.", 1, map.size());
         map.put(2, "World");

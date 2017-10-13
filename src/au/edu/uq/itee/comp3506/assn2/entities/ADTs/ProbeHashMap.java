@@ -28,7 +28,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  */
 public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
-    private int size = 1000; // Initial size of the array map to initialize.
+    private int arraySize = 2; // Initial size of the array map to initialize.
     private int numEntries = 0; // Number of key-value pairs.
 
     private final MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null); // Sentinel Entry.
@@ -40,7 +40,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      *
      */
     public ProbeHashMap() {
-        map = new MapEntry[size];
+        map = new MapEntry[arraySize];
     }
 
 
@@ -107,9 +107,11 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      */
     @Override
     public V put(K key, V value) {
+        if (numEntries == map.length) {
+            resize();
+        }
         int pos = findAvailablePosition(key);
         if (pos == -1 && map[-pos] != DEFUNCT) {
-            // TODO resizing here.
             return null;
         }
         if (pos < 0) {
@@ -187,11 +189,11 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      *      Negative value if DEFUNCT is found.
      */
     private int findAvailablePosition(K key) {
-        int home = key.hashCode() % size;
+        int home = key.hashCode() % map.length;
         int noSpots = -1;
 
-        for (int i = 0; i < size; i++) {
-            int pos = (home + i) % size;
+        for (int i = 0; i < map.length; i++) {
+            int pos = (home + i) % map.length;
             if (isAvailable(pos)) {
                 if (map[pos] == null) {
                     return pos;
@@ -206,5 +208,23 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
             }
         }
         return noSpots;
+    }
+
+
+    /**
+     * Resize map to 2x current map size and copy key-values over.
+     */
+    private void resize() {
+        arraySize *= 2;
+        MapEntry<K, V>[] newMap = new MapEntry[arraySize];
+        MapEntry<K, V>[] temp = map;
+        map = newMap;
+        numEntries = 0;
+        for (MapEntry<K, V> entry : temp) {
+            if (entry == null) {
+                continue;
+            }
+            put(entry.getK(), entry.getV());
+        }
     }
 }
