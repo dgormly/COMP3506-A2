@@ -8,6 +8,9 @@ import java.util.List;
 
 public class FileReader {
 
+    /* TODO this needs to be changed to not use an ArrayList and should be implemented in the AutoTester.
+     */
+
     private final static String RECORD_FILE = "call-records.txt";
     private final static String SWITCHES_FILE = "switches.txt";
 

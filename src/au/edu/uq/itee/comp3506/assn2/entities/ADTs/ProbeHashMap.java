@@ -1,9 +1,7 @@
-package au.edu.uq.itee.comp3506.assn2.entities;
-
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
+package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
-public class HashMap<K, V> implements AbstractMap<K, V> {
+public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
     private int size;
     private int numEntries = 0;
@@ -11,7 +9,7 @@ public class HashMap<K, V> implements AbstractMap<K, V> {
     private final MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null);
     private MapEntry<K, V>[] map;
 
-    public HashMap(int size) {
+    public ProbeHashMap(int size) {
         this.size = size;
         map = new MapEntry[size];
     }
@@ -107,32 +105,4 @@ public class HashMap<K, V> implements AbstractMap<K, V> {
         }
         return noSpots;
     }
-
-
-    private class MapEntry<K, V> {
-        private K k;
-        private V v;
-
-        public MapEntry(K key, V value) {
-            k = key;
-            v = value;
-        }
-
-        public K getK() {
-            return k;
-        }
-
-        public void setK(K k) {
-            this.k = k;
-        }
-
-        public V getV() {
-            return v;
-        }
-
-        public void setV(V v) {
-            this.v = v;
-        }
-    }
-
 }
