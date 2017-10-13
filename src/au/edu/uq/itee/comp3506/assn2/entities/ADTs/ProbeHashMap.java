@@ -1,6 +1,31 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
+/**
+ * Hashmap using the Linear-probing technique to store data into an array.
+ * This class does not use any collections library.
+ *
+ * Map used to hold key-value pairs.
+ *
+ * Uses the hashcode value of the given key to store determine the position
+ * in the array to store the key-value pair. If a key is already using a
+ * given location it scans forward to the next available spot.
+ *
+ * Made for COMP3506 Assignment 2.
+ *
+ * Memory efficiency: O(n)
+ *
+ * @author Daniel Gormly - s4350334
+ * @date 05/10/2017
+ *
+ * @param <K>
+ *     Key Object to use as search key.
+ * @param <V>
+ *     Value Object to use as value key.
+ *
+ * TODO Implement auto-resizing and update tests.
+ *
+ */
 public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
     private int size = 1000; // Initial size of the array map to initialize.
@@ -11,14 +36,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
 
     /**
-     * Linear-probing Hashmap.
-     * Uses the hashcode value of the given key to store determine the position
-     * in the array to store the key-value pair. If a key is already using a
-     * given location it scans forward to the next available spot.
-     *
-     * Memory efficiency: O(n)
-     *
-     * TODO Implement auto-resizing and update tests.
+     * Linear-probing Hashmap constructor.
      *
      */
     public ProbeHashMap() {
