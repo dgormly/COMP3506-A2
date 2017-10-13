@@ -38,36 +38,6 @@ public class CallRecord {
 	}
 
 
-	public CallRecord(String line) {
-		String[] variables = line.split(" ");
-
-		// TODO finish implementing this first!
-		long dialer = Long.parseLong(variables[0]);
-		long receiver = Long.parseLong(variables[variables.length - 2]);
-		int diallerSwitch = Integer.parseInt(variables[1]);
-		int receiverSwitch = Integer.parseInt(variables[variables.length - 3]);
-
-		List<Integer> path = new ArrayList<>();
-		for (int i = 2; i < variables.length - 2; i++) {
-			if (variables[i].equals("")) {
-				continue;
-			}
-
-			int switchId = Integer.parseInt(variables[i]);
-			path.add(switchId);
-		}
-
-		LocalDateTime stamp = LocalDateTime.parse(variables[variables.length - 1]);
-
-		// Map to local variables.
-		this.dialler = dialer;
-		this.receiver = receiver;
-		this.diallerSwitch = diallerSwitch;
-		this.receiverSwitch = receiverSwitch;
-		this.connectionPath = path;
-		this.timeStamp = stamp;
-	}
-
 	public long getDialler() {
 		return dialler;
 	}

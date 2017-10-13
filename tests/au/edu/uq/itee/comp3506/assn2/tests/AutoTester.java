@@ -1,14 +1,11 @@
 package au.edu.uq.itee.comp3506.assn2.tests;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import au.edu.uq.itee.comp3506.assn2.api.TestAPI;
 import au.edu.uq.itee.comp3506.assn2.entities.CallRecord;
+import au.edu.uq.itee.comp3506.assn2.entities.FileReader;
 
 /**
  * Hook class used by automated testing tool.
@@ -27,21 +24,8 @@ public final class AutoTester implements TestAPI {
 		// TODO Create and initialise any objects required by the methods below.
 		records = new ArrayList<>();			// TODO this is to change data type.
 
-
 		/* Read in data from data sets. */
-		List<String> inputLines = new ArrayList<>();
-		try {
-			inputLines = readFile("call-records-short.txt");
-		} catch (IOException e) {
-			System.err.println("File failed to read.");
-			e.printStackTrace();
-		}
-
-		// Pass into Call records.
-		for (String line : inputLines) {
-			CallRecord cr = new CallRecord(line);
-			records.add(cr);
-		}
+		records = FileReader.readRecords();
 
 	}
 	
@@ -129,29 +113,4 @@ public final class AutoTester implements TestAPI {
 		System.out.println("AutoTester Stub");
 	}
 
-
-	/**
-	 * Reads each line in the given textfile name from data folder into an List.
-	 *
-	 * Runs in O(n) time.
-	 *
-	 * @param fileName, The name of the textfile to be read from the data folder.
-	 * @return Each line of a file in a list.
-	 * @throws IOException,
-	 * 		Throws IOException if the file cannot be found.
-	 */
-	private List<String> readFile(String fileName) throws IOException {
-		List<String> lineArray = new ArrayList<>();
-
-		FileReader fr = new FileReader("data/" + fileName);
-		BufferedReader br = new BufferedReader(fr);
-
-		String line;
-		while ((line = br.readLine()) != null) {
-			lineArray.add(line);
-		}
-		br.close();
-		fr.close();
-		return lineArray;
-	}
 }
