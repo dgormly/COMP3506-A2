@@ -25,29 +25,23 @@ public final class AutoTester implements TestAPI {
 
 	public AutoTester()  {
 		// TODO Create and initialise any objects required by the methods below.
+		records = new ArrayList<>();			// TODO this is to change data type.
 
 
 		/* Read in data from data sets. */
+		List<String> inputLines = new ArrayList<>();
 		try {
-			List<String> inputLines = readFile("call-records-short.txt");
-			// Pass into Call records.
-			for (String line : inputLines) {
-				CallRecord tempRecord;
-				String[] variables = line.split(" ");
-
-				// TODO finish implementing this first!
-				long dialer = Long.parseLong(variables[0]);
-
-
-			}
-
+			inputLines = readFile("call-records-short.txt");
 		} catch (IOException e) {
 			System.err.println("File failed to read.");
 			e.printStackTrace();
 		}
 
-		records = new ArrayList<>();			// TODO this is to change data type.
-
+		// Pass into Call records.
+		for (String line : inputLines) {
+			CallRecord cr = new CallRecord(line);
+			records.add(cr);
+		}
 
 	}
 	
