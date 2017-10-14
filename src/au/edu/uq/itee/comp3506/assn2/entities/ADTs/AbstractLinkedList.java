@@ -31,6 +31,15 @@ public interface AbstractLinkedList<T> {
 
 
     /**
+     * Checks to see whether the cursor is currently looking
+     * at the last item in the list.
+     *
+     * @return
+     *      True if the item is at the end of the list.
+     */
+    boolean isLast();
+
+    /**
      * Checks if the list is empty.
      *
      * @return
@@ -52,10 +61,8 @@ public interface AbstractLinkedList<T> {
     /**
      * Remove item from the list.
      *
-     * @return
-     *      Item that has been removed.
      */
-    T remove();
+    void remove();
 
 
     /**
@@ -65,15 +72,32 @@ public interface AbstractLinkedList<T> {
 
 
     /**
+     * Returns the element of the given location.
+     *
+     * @return
+     *      Element located at the curernt location.
+     */
+    T getElement();
+
+
+    /**
      * Node structure holding next and before nodes and element to store.
      * @param <T>
      *      Type of object to store.
      */
     class Node<T> {
 
-        private T element;
-        private Node<T> next;
-        private Node<T> before;
+        private T element = null;
+        private Node<T> next = null;
+        private Node<T> before = null;
+
+        public void setNext(Node<T> next) {
+            this.next = next;
+        }
+
+        public void setBefore(Node<T> before) {
+            this.before = before;
+        }
 
         /**
          * Returns the element saved.
@@ -94,6 +118,16 @@ public interface AbstractLinkedList<T> {
          */
         void setElement(T element) {
             this.element = element;
+        }
+
+
+        Node<T> getNext() {
+            return next;
+        }
+
+
+        Node<T> getBefore() {
+            return before;
         }
     }
 }
