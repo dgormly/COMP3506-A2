@@ -34,7 +34,6 @@ public class HashMapTest {
         assertEquals("Entry was not added to map.", 1, map.size());
         map.put(2, "World");
         assertEquals("Entry was not added to map.", 2, map.size());
-        assertEquals("Map is full", map.put(1, "Test"), null);
         assertEquals("Old value expected", "Hello", map.put(0, "HelloWorld"));
         assertEquals("Old value expected", "HelloWorld", map.put(0, "HelloWorldWorld"));
     }
@@ -46,7 +45,6 @@ public class HashMapTest {
         map.put("World", 1);
 
         assertEquals("Incorrect key found.", 0, (int) map.get("Hello"));
-        assertEquals("Map is full", map.put("test", 0), null);
     }
 
 
