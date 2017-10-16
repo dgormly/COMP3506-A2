@@ -30,10 +30,11 @@ public interface AbstractBinaryTree<E> {
 
 
     class Node<E> {
-        protected Node<E> parent;
+        protected Node<E> parent = null;
         protected Node<E> left = null;
         protected Node<E> right = null;
         protected E element;
+        protected int height = 0;
 
 
         Node(Node<E> parent, E element) {
@@ -68,6 +69,13 @@ public interface AbstractBinaryTree<E> {
             return element;
         }
 
+        public int getHeight() {
+            return height;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
 
         private Node<E> next = null;
 
@@ -111,6 +119,4 @@ public interface AbstractBinaryTree<E> {
         }
 
     }
-
-
 }
