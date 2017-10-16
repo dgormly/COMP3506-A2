@@ -1,6 +1,8 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
+import com.sun.tracing.Probe;
+
 /**
  * Hash-map using the Linear-probing technique to store data into an array.
  * This class does not use any collections library.
@@ -28,7 +30,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  */
 public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
-    private int arraySize = 2; // Initial size of the array map to initialize.
+    private int arraySize = 1000; // Initial size of the array map to initialize.
     private int numEntries = 0; // Number of key-value pairs.
 
     private final MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null); // Sentinel Entry.
@@ -40,6 +42,12 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      *
      */
     public ProbeHashMap() {
+        map = new MapEntry[arraySize];
+    }
+
+
+    public ProbeHashMap(int size) {
+        arraySize = size;
         map = new MapEntry[arraySize];
     }
 
@@ -83,7 +91,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      */
     @Override
     public V get(K key) {
-        int pos = findAvailablePosition(key);
+        int pos = findKey(key);
         if (pos == -1) {
             return null;
         } else {
@@ -210,6 +218,18 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
         return noSpots;
     }
 
+
+    private int findKey(K key) {
+        int home = key.hashCode() % map.length;
+
+        for (int i = 0; i < map.length; i++) {
+            int pos = (home + i) % map.length;
+            if (map[pos] != null && map[pos] != DEFUNCT && map[pos].getK().equals(key)) {
+                return pos;
+            }
+        }
+        return -1;
+    }
 
     /**
      * Resize map to 2x current map size and copy key-values over.

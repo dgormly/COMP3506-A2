@@ -86,13 +86,15 @@ public class BinaryTreeTest {
     public void treverseTree() {
         root = tree.set(root, "C");
         tree.add("B");
-        Node<String> node = tree.add("A");
+        tree.add("A");
         tree.add("D");
         tree.add("E");
         tree.add("F");
         tree.add("G");
         tree.add("H");
         tree.add("I");
+
+        Node<String> node = tree.get("C");
 
         node = node.getNext(node);
         System.out.println(node.getElement());

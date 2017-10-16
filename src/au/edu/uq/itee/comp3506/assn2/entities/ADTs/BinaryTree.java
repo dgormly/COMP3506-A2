@@ -32,8 +32,10 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
         while (true) {
             if (hash < current.getElement().hashCode()) {
                 if (current.left == null) {
-                    newNode = new Node<E>(current, element);
+                    newNode = new Node<>(current, element);
                     current.left = newNode;
+                    map.put(element, newNode);
+                    size++;
                     return newNode;
                 } else {
                     current = current.left;
@@ -42,6 +44,8 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
                 if (current.right == null) {
                     newNode = new Node<E>(current, element);
                     current.right = newNode;
+                    map.put(element, newNode);
+                    size++;
                     return newNode;
                 } else {
                     current = current.right;

@@ -10,7 +10,7 @@ public class HashMapTest {
 
     @Before
     public void setupHashMap() {
-        map = new ProbeHashMap<>();
+        map = new ProbeHashMap<>(2);
     }
 
 
