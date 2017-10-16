@@ -2,7 +2,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
 /**
- * Hashmap using the Linear-probing technique to store data into an array.
+ * Hash-map using the Linear-probing technique to store data into an array.
  * This class does not use any collections library.
  *
  * Map used to hold key-value pairs.

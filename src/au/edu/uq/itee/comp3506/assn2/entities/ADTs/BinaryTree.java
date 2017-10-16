@@ -20,6 +20,36 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
     }
 
 
+    /**
+     *
+     * @param element
+     * @return
+     */
+    public Node<E> add(E element) {
+        Node<E> current = root;
+        Node<E> newNode;
+        int hash = element.hashCode();
+        while (true) {
+            if (hash < current.getElement().hashCode()) {
+                if (current.left == null) {
+                    newNode = new Node<E>(current, element);
+                    current.left = newNode;
+                    return newNode;
+                } else {
+                    current = current.left;
+                }
+            } else {
+                if (current.right == null) {
+                    newNode = new Node<E>(current, element);
+                    current.right = newNode;
+                    return newNode;
+                } else {
+                    current = current.right;
+                }
+            }
+        }
+    }
+
     @Override
     public Node<E> addLeft(Node<E> parent, E element) {
         if (parent == null || parent.left != null) {
@@ -100,5 +130,18 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
         return size == 0;
     }
 
+
+    public void printInOrder(Node<E> node) {
+
+        if (node == null) {
+            return;
+        }
+
+        printInOrder(node.left);
+
+        System.out.println(node.getElement().toString());
+
+        printInOrder(node.right);
+    }
 
 }

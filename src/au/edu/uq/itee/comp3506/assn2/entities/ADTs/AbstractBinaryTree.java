@@ -67,6 +67,49 @@ public interface AbstractBinaryTree<E> {
         public E getElement() {
             return element;
         }
+
+
+        private Node<E> next = null;
+
+        public Node<E> getNext(Node<E> node) {
+            if (node.right != null) {
+                node = node.right;
+            } else {
+                /* find next valid parent. */
+                return node.parent;
+
+            }
+
+            /* Do recursion. */
+            while (next == null) {
+                recurseInOrder(node);
+                if (next == null) {
+                    node = node.parent;
+                }
+            }
+            return next;
+        }
+
+
+        private void recurseInOrder(Node<E> node) {
+            if (node == null) {
+                return;
+            }
+
+            recurseInOrder(node.left);
+
+            if (next == null) {
+                next = node;
+                return;
+            }
+
+            if (next != null) {
+                return;
+            }
+
+            recurseInOrder(node.right);
+        }
+
     }
 
 

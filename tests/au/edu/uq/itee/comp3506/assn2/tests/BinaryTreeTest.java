@@ -68,4 +68,43 @@ public class BinaryTreeTest {
         assertEquals("Expected node5.", node5, tree.get("6"));
 
     }
+
+
+    @Test
+    public void binaryAddTest() {
+        root = tree.set(root, "B");
+        tree.add("A");
+        tree.add("C");
+
+        assertEquals("Right child should be C", "C", root.getRight().getElement());
+        assertEquals("Left child should be A", "A", root.getLeft().getElement());
+
+    }
+
+
+    @Test
+    public void treverseTree() {
+        root = tree.set(root, "C");
+        tree.add("B");
+        Node<String> node = tree.add("A");
+        tree.add("D");
+        tree.add("E");
+        tree.add("F");
+        tree.add("G");
+        tree.add("H");
+        tree.add("I");
+
+        node = node.getNext(node);
+        System.out.println(node.getElement());
+
+        node = node.getNext(node);
+        System.out.println(node.getElement());
+        node = node.getNext(node);
+        System.out.println(node.getElement());
+        node = node.getNext(node);
+        System.out.println(node.getElement());
+        node = node.getNext(node);
+        System.out.println(node.getElement());
+
+    }
 }
