@@ -196,7 +196,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      *      Negative value if DEFUNCT is found.
      */
     private int findAvailablePosition(K key) {
-        int home = key.hashCode() % map.length;
+        int home = Math.abs(key.hashCode() % map.length);
         int noSpots = -1;
 
         for (int i = 0; i < map.length; i++) {

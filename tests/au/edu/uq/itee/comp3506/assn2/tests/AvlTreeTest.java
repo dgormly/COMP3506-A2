@@ -20,7 +20,7 @@ public class AvlTreeTest {
 
     @Test
     public void restructure() {
-        root = tree.addRoot(44, 44);
+        root = tree.add(44, 44);
         tree.add(17, 17);
         tree.add(32, 32);
         //tree.add(44);

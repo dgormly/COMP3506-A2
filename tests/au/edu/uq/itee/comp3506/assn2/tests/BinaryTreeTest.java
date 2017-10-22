@@ -15,10 +15,9 @@ public class BinaryTreeTest {
     @Before
     public void setupTree() {
         tree = new BinaryTree<>();
-        root = tree.addRoot("C", "C");
+        root = tree.add("C", "C");
         assertEquals("Root element incorrect.", "C", tree.getRoot().getElement());
         assertEquals("Expected tree size of 1.", 1, tree.size());
-        assertEquals("Root already exists.", null, tree.addRoot("Fail", "Fail"));
     }
 
 
@@ -66,7 +65,6 @@ public class BinaryTreeTest {
 
     @Test
     public void treverseTree() {
-        tree.addRoot("C", "C");
         tree.add("B", "B");
         tree.add("A", "A");
         tree.add("D", "D");

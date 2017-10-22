@@ -14,6 +14,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  */
 public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E> implements AbstractBinaryTree<K, E> {
 
+
     /**
      * Returns the distance to the root node of the tree of a given node.
      *
@@ -85,8 +86,13 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
      */
     @Override
     public Node<K, E> add(K key, E element) {
+        Node<K, E> current;
 
-        Node<K, E> current = getRoot();
+        if (size() == 0) {
+            return setRoot(key, element);
+        }
+
+        current = getRoot();
         while (!current.getKey().equals(key)) {
             if (key.compareTo(current.getKey()) == -1) {
                 if (current.left != null) {
@@ -103,6 +109,7 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
                     current = current.right;
                 }
             } else {
+                size++;
                 return getRoot();
             }
         }
@@ -113,6 +120,7 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
             current = balanceTree(current);
         } while (current.parent != null);
 
+        size++;
         return current;
     }
 

@@ -25,10 +25,11 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     private Node<K, E> root = null;
     private ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();
 
-    private int size = 0;
+    protected int size = 0;
 
-    @Override
-    public Node<K, E> addRoot(K key, E element) {
+
+    // TODO I don't think I need this
+    protected Node<K, E> setRoot(K key, E element) {
         if (size() > 0) {
             return null;
         } else {
@@ -47,8 +48,15 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
      * @return
      */
     public Node<K, E> add(K key, E element) {
-        Node<K, E> current = root;
-        Node<K, E> newNode;
+        Node<K, E> current;
+
+        if (size == 0) {
+            setRoot(key, element);
+            return root;
+        } else {
+            current = root;
+        }
+
         while (true) {
             /* Add to the left if key less or equal to current. */
             if (key.compareTo(current.key) <= 0) {
