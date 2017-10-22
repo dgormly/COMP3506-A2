@@ -12,7 +12,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  * @param <E>
  *     Element type to store inside the nodes.
  */
-public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implements AbstractBinaryTree<K, E> {
+public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E> implements AbstractBinaryTree<K, E> {
 
     /**
      * Returns the distance to the root node of the tree of a given node.
@@ -31,6 +31,8 @@ public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implem
 
     /**
      * Checks whether the tree needs balancing. If it does it will call the required rotation.
+     *
+     * Runtime: O(1)
      *
      * @param root
      *      Node that may need rebalancing.
@@ -74,6 +76,8 @@ public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implem
      *
      * The element will be sorted by it's hashcode.
      *
+     * Runtime: O(logn)
+     *
      * @param element
      *      Element to be inserted.
      * @return
@@ -116,6 +120,8 @@ public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implem
     /**
      * Does a tri-rotation to the left.
      *
+     * Runtime: O(1)
+     *
      * @param root,
      *      Parent node of the three nodes to rotate.
      *
@@ -151,6 +157,8 @@ public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implem
 
     /**
      * Does a tri-rotation to the right.
+     *
+     * Runtime: O(1)
      *
      * @param root
      *      Parent node of the three nodes to rotate.
@@ -188,6 +196,8 @@ public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implem
     /**
      * Increments the height the given node by one.
      *
+     * Runtime: O(1)
+     *
      * @param node
      *      Node to increment.
      *
@@ -198,24 +208,5 @@ public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implem
         node.height = 1 + Math.max(height(node.left), height(node.right));
         return node.height;
     }
-
-
-
-//    public void printTreeIndent(Node<E> node, int indent) {
-//        int ix;
-//        for (ix = 0; ix < indent; ix++) System.out.print(" ");
-//        if (node == null) System.out.print("Empty child\n");
-//        else
-//        {
-//            System.out.printf("node: %s; height: %d\n", node.element, node.height);
-//            printTreeIndent(node.left, indent + 4);
-//            printTreeIndent(node.right, indent + 4);
-//        }
-//    }
-//
-//    public void printTree(Node<E> node)
-//    {
-//        printTreeIndent(node, 0);
-//    }
 
 }

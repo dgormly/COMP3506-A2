@@ -14,7 +14,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  * @param <E>
  *     Data to be stored.
  */
-public interface AbstractBinaryTree<K extends Comparable<K>, E> {
+public interface AbstractBinaryTree<K extends Comparable<? super K>, E> {
 
     Node<K, E> addRoot(K key, E element);
 
@@ -46,7 +46,7 @@ public interface AbstractBinaryTree<K extends Comparable<K>, E> {
      * @param <E>
      *          Datatype to be stored in the tree.
      */
-    class Node<K, E> {
+    class Node<K extends Comparable<? super K>, E> {
         protected Node<K, E> parent = null;
         protected Node<K, E> left = null;
         protected Node<K, E> right = null;

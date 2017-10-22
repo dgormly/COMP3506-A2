@@ -1,7 +1,13 @@
 package au.edu.uq.itee.comp3506.assn2.entities;
 
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractBinaryTree;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AvlTree;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.ProbeHashMap;
+
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +21,7 @@ public class FileReader {
     private final static String SWITCHES_FILE = "switches.txt";
 
 
+
     /**
      * Reads in all records and converts them to a CallRecord Object.
      *
@@ -22,10 +29,10 @@ public class FileReader {
      *
      * @return List of Call Records.
      */
-    public static List<CallRecord> readRecords() {
+    public static AbstractBinaryTree<LocalDateTime, CallRecord> readRecords() {
         /* Read in data from data sets. */
         List<String> inputLines = new ArrayList<>();
-        List<CallRecord> records = new ArrayList<>();
+        AbstractBinaryTree<LocalDateTime, CallRecord> records = new AvlTree<>();
 
         try {
             inputLines = readFile(RECORD_FILE);
@@ -56,7 +63,6 @@ public class FileReader {
             LocalDateTime stamp = LocalDateTime.parse(variables[variables.length - 1]);
 
             CallRecord cr = new CallRecord(dialer, receiver, diallerSwitch, receiverSwitch, path, stamp);
-            records.add(cr);
         }
         return records;
     }
@@ -69,10 +75,10 @@ public class FileReader {
      *
      * @return List of switch identifiers.
      */
-    public static List<Integer> readSwitches() {
+    public static AbstractMap<Integer, Integer> readSwitches() {
         /* Read in data from data sets. */
         List<String> inputLines = new ArrayList<>();
-        List<Integer> switches = new ArrayList<>();
+        AbstractMap<Integer, Integer> switches = new ProbeHashMap<>();
 
         try {
             inputLines = readFile(SWITCHES_FILE);
@@ -82,7 +88,7 @@ public class FileReader {
         }
 
         for (String line : inputLines) {
-            switches.add(Integer.parseInt(line));
+            switches.put(Integer.parseInt(line), Integer.parseInt(line));
         }
 
         switches.remove(0);
@@ -116,8 +122,4 @@ public class FileReader {
         return lineArray;
     }
 
-
-    /**
-     *
-     */
 }

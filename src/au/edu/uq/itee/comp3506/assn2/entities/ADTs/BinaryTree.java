@@ -20,7 +20,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  * @param <E>
  *     Element type to store inside the nodes.
  */
-public class BinaryTree<K extends Comparable<K>, E> implements AbstractBinaryTree<K, E> {
+public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractBinaryTree<K, E> {
 
     private Node<K, E> root = null;
     private ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();

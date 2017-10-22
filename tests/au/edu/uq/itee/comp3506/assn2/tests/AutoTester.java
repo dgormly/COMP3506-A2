@@ -1,9 +1,11 @@
 package au.edu.uq.itee.comp3506.assn2.tests;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import au.edu.uq.itee.comp3506.assn2.api.TestAPI;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractBinaryTree;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.SinglyLinkedList;
 import au.edu.uq.itee.comp3506.assn2.entities.CallRecord;
 import au.edu.uq.itee.comp3506.assn2.entities.FileReader;
 
@@ -18,15 +20,17 @@ public final class AutoTester implements TestAPI {
 	// TODO Provide any data members required for the methods below to work correctly with your application.
 
 	/* Data sets. */
-	List<CallRecord> records;
+	AbstractBinaryTree<LocalDateTime, CallRecord> recordsTree;
+	AbstractMap<Integer, Integer> switchesMap;
+
 
 	public AutoTester()  {
 		// TODO Create and initialise any objects required by the methods below.
-		records = new ArrayList<>();			// TODO this is to change data type.
+//		records = new ArrayList<>();			// TODO this is to change data type.
 
 		/* Read in data from data sets. */
-		records = FileReader.readRecords();
-
+		recordsTree = FileReader.readRecords();
+		switchesMap = FileReader.readSwitches();
 	}
 	
 	@Override

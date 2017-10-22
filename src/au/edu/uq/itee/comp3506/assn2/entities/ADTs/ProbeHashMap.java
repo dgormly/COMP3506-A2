@@ -1,8 +1,6 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
-import com.sun.tracing.Probe;
-
 /**
  * Hash-map using the Linear-probing technique to store data into an array.
  * This class does not use any collections library.
