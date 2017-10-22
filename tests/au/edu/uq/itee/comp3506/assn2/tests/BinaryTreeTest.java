@@ -9,24 +9,24 @@ import static org.junit.Assert.assertEquals;
 
 public class BinaryTreeTest {
 
-    BinaryTree<String> tree;
-    Node<String> root;
+    BinaryTree<String, String> tree;
+    Node<String, String> root;
 
     @Before
     public void setupTree() {
         tree = new BinaryTree<>();
-        root = tree.addRoot("Hello");
-        assertEquals("Root element incorrect.", "Hello", tree.getRoot().getElement());
+        root = tree.addRoot("C", "C");
+        assertEquals("Root element incorrect.", "C", tree.getRoot().getElement());
         assertEquals("Expected tree size of 1.", 1, tree.size());
-        assertEquals("Root already exists.", null, tree.addRoot("Fail"));
+        assertEquals("Root already exists.", null, tree.addRoot("Fail", "Fail"));
     }
 
 
     @Test
     public void addElementsTest() {
-        Node<String> root = tree.getRoot();
-        Node<String> left = tree.addLeft(root, "World");
-        Node<String> right = tree.addRight(root, "Daniel");
+        Node<String, String> root = tree.getRoot();
+        Node<String, String> left = tree.addLeft(root, "World", "World");
+        Node<String, String> right = tree.addRight(root, "Daniel", "Daniel");
 
         assertEquals("Wrong element returned for left child.", "World", root.getLeft().getElement());
         assertEquals("Wrong element returned for right child.", "Daniel", root.getRight().getElement());
@@ -38,32 +38,15 @@ public class BinaryTreeTest {
 
 
     @Test
-    public void removeNodeTest() {
-        Node<String> toRemove = tree.addLeft(root, "1");
-        Node<String> node1 = tree.addLeft(toRemove, "2");
-        Node<String> node2 = tree.addLeft(node1, "3");
-        Node<String> node3 = tree.addLeft(node2, "4");
-        Node<String> node4 = tree.addLeft(node3, "5");
-        Node<String> node5 = tree.addLeft(node4, "6");
-
-        assertEquals("Wrong node returned on removal.", toRemove,tree.remove(toRemove));
-
-        assertEquals("Tree restructured incorrectly.", node1, root.getLeft());
-        assertEquals("Wrong parent found.", root, node1.getParent());
-        assertEquals("Wrong child found.", node2, node1.getLeft());
-    }
-
-
-    @Test
     public void getNodeTest() {
-        Node<String> left = tree.addLeft(root, "World");
-        tree.addRight(root, "Daniel");
-        tree.addRight(left, "Third Level");
-        Node<String> node1 = tree.addLeft(root, "2");
-        Node<String> node2 = tree.addLeft(node1, "3");
-        Node<String> node3 = tree.addLeft(node2, "4");
-        Node<String> node4 = tree.addLeft(node3, "5");
-        Node<String> node5 = tree.addLeft(node4, "6");
+        Node<String, String> left = tree.addLeft(root, "World", "World");
+        tree.addRight(root, "Daniel", "Daniel");
+        tree.addRight(left, "Third Level", "Third Level");
+        Node<String, String> node1 = tree.addLeft(root, "2", "2");
+        Node<String, String> node2 = tree.addLeft(node1, "3", "3");
+        Node<String, String> node3 = tree.addLeft(node2, "4", "4");
+        Node<String, String> node4 = tree.addLeft(node3, "5", "5");
+        Node<String, String> node5 = tree.addLeft(node4, "6", "6");
 
         assertEquals("Expected node5.", node5, tree.get("6"));
 
@@ -72,30 +55,31 @@ public class BinaryTreeTest {
 
     @Test
     public void binaryAddTest() {
-        root = tree.set(root, "B");
-        tree.add("A");
-        tree.add("C");
+        tree.add("B", "B");
+        tree.add("D", "D");
 
-        assertEquals("Right child should be C", "C", root.getRight().getElement());
-        assertEquals("Left child should be A", "A", root.getLeft().getElement());
+        assertEquals("Right child should be D", "D", tree.getRoot().getRight().getElement());
+        assertEquals("Left child should be B", "B", tree.getRoot().getLeft().getElement());
 
     }
 
 
     @Test
     public void treverseTree() {
-        root = tree.set(root, "C");
-        tree.add("B");
-        tree.add("A");
-        tree.add("D");
-        tree.add("E");
-        tree.add("F");
-        tree.add("G");
-        tree.add("H");
-        tree.add("I");
+        tree.addRoot("C", "C");
+        tree.add("B", "B");
+        tree.add("A", "A");
+        tree.add("D", "D");
+        tree.add("E", "E");
+        tree.add("F","F");
+        tree.add("G", "G");
+        tree.add("H", "H");
+        tree.add("I", "I");
 
-        Node<String> node = tree.get("C");
 
+        Node<String, String> node = tree.get("A");
+
+//        assertEquals("Wrong element found.",;
         node = node.getNext(node);
         System.out.println(node.getElement());
 

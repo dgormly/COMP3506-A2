@@ -1,48 +1,67 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
-public interface AbstractBinaryTree<E> {
 
-    Node<E> addRoot(E element);
+/**
+ * Binary Interface implements a tree where each node has two leafs.
+ * This does not mean that the data will be sorted.
+ *
+ * Created for COMP3506 at the University of Queensland, 2017.
+ *
+ * @auther Daniel Gormly
+ *
+ * @param <K>
+ *      Data type to organise the tree by.
+ * @param <E>
+ *     Data to be stored.
+ */
+public interface AbstractBinaryTree<K extends Comparable<K>, E> {
+
+    Node<K, E> addRoot(K key, E element);
 
 
-    Node<E> addLeft(Node<E> parent, E element);
+    Node<K, E> addLeft(Node<K, E> parent,K key, E element);
 
 
-    Node<E> addRight(Node<E> parent, E element);
+    Node<K, E> addRight(Node<K, E> parent, K key, E element);
 
 
-    Node<E> getRoot();
+    Node<K, E> getRoot();
 
 
-    Node<E> get(E element);
+    Node<K, E> get(K key);
 
 
-    Node<E> set(Node<E> position, E element);
-
-
-    Node<E> remove(Node<E> element);
-
+    Node<K,E> set(Node<K, E> position, E element);
 
 
     int size();
 
+
     boolean isEmpty();
 
 
-    class Node<E> {
-        protected Node<E> parent = null;
-        protected Node<E> left = null;
-        protected Node<E> right = null;
+    /**
+     * Class used to manage nodes in the tree.
+     *
+     * @param <E>
+     *          Datatype to be stored in the tree.
+     */
+    class Node<K, E> {
+        protected Node<K, E> parent = null;
+        protected Node<K, E> left = null;
+        protected Node<K, E> right = null;
+        protected K key;
         protected E element;
         protected int height = 0;
 
 
-        Node(Node<E> parent, E element) {
+        Node(Node<K, E> parent, K key, E element) {
+            this.key = key;
             this.parent = parent;
             this.element = element;
         }
 
-        Node<E> getSibling() {
+        Node<K, E> getSibling() {
             if (parent == null) {
                 return null;
             }
@@ -53,20 +72,24 @@ public interface AbstractBinaryTree<E> {
             }
         }
 
-        public Node<E> getParent() {
+        public Node<K, E> getParent() {
             return parent;
         }
 
-        public Node<E> getLeft() {
+        public Node<K, E> getLeft() {
             return left;
         }
 
-        public Node<E> getRight() {
+        public Node<K, E> getRight() {
             return right;
         }
 
         public E getElement() {
             return element;
+        }
+
+        public K getKey() {
+            return key;
         }
 
         public int getHeight() {
@@ -77,9 +100,9 @@ public interface AbstractBinaryTree<E> {
             this.height = height;
         }
 
-        private Node<E> next = null;
+        private Node<K, E> next = null;
 
-        public Node<E> getNext(Node<E> node) {
+        public Node<K, E> getNext(Node<K, E> node) {
             if (node.right != null) {
                 node = node.right;
             } else {
@@ -99,7 +122,7 @@ public interface AbstractBinaryTree<E> {
         }
 
 
-        private void recurseInOrder(Node<E> node) {
+        private void recurseInOrder(Node<K, E> node) {
             if (node == null) {
                 return;
             }

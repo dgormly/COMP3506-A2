@@ -13,6 +13,8 @@ import com.sun.tracing.Probe;
  * in the array to store the key-value pair. If a key is already using a
  * given location it scans forward to the next available spot.
  *
+ * To maintain efficiency, this map resizes when it reaches 75% full.
+ *
  * Made for COMP3506 Assignment 2.
  *
  * Memory efficiency: O(n)
@@ -39,7 +41,6 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
     /**
      * Linear-probing Hashmap constructor.
-     *
      */
     public ProbeHashMap() {
         map = new MapEntry[arraySize];
@@ -115,7 +116,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      */
     @Override
     public V put(K key, V value) {
-        if (numEntries == map.length) {
+        if (numEntries > map.length * 0.75) {
             resize();
         }
         int pos = findAvailablePosition(key);
@@ -219,6 +220,19 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     }
 
 
+    /**
+     * Returns the location of a given key.
+     *
+     * Starts with the initial hash position, searching
+     * linear until found.
+     *
+     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     *
+     * @param key
+     *      Key to look find.
+     * @return
+     *      Position of key inside the array.
+     */
     private int findKey(K key) {
         int home = key.hashCode() % map.length;
 

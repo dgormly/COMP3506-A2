@@ -1,23 +1,24 @@
 package au.edu.uq.itee.comp3506.assn2.tests;
 
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractLinkedList;
 import au.edu.uq.itee.comp3506.assn2.entities.ADTs.SinglyLinkedList;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.LinkedList;
 
 import static org.junit.Assert.assertEquals;
 
 /**
- * Tests for LinkedList implemented by Lachlan Healey.
+ * Tests for Singly Linked list.
  *
- * @author leggy <l.healey@uq.edu.au>
+ * @author Daniel Gormly
  */
 public class SinglyLinkedListTest {
     private SinglyLinkedList<String> list;
 
 
+    /**
+     * Initial setup of the list.
+     */
     @Before
     public void prepareList() {
         list = new SinglyLinkedList<>();
@@ -25,6 +26,9 @@ public class SinglyLinkedListTest {
     }
 
 
+    /**
+     * Test that adding the list is working correctly.
+     */
     @Test
     public void addToList() {
         list.addToEnd("Hello");
@@ -37,6 +41,9 @@ public class SinglyLinkedListTest {
     }
 
 
+    /**
+     * Test that removing from the list is working correctly.
+     */
     @Test
     public void removeFromListTest() {
         list.addToEnd("Hello");
@@ -56,6 +63,9 @@ public class SinglyLinkedListTest {
     }
 
 
+    /**
+     * Check traversing returns items in correct order.
+     */
     @Test
     public void traverseListTest() {
         list.addToEnd("Hello");

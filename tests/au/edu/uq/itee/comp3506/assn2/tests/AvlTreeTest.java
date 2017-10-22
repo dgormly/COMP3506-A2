@@ -9,9 +9,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class AvlTreeTest {
-    AvlTree<Integer> tree;
+    AvlTree<Integer, Integer> tree;
 
-    AbstractBinaryTree.Node<Integer> root;
+    AbstractBinaryTree.Node<Integer, Integer> root;
 
     @Before
     public void setupTree() {
@@ -20,22 +20,22 @@ public class AvlTreeTest {
 
     @Test
     public void restructure() {
-        root = tree.addRoot(44);
-        tree.add(17);
-        tree.add(32);
+        root = tree.addRoot(44, 44);
+        tree.add(17, 17);
+        tree.add(32, 32);
         //tree.add(44);
-        tree.add(48);
-        tree.add(50);
+        tree.add(48, 48);
+        tree.add(50, 50);
         //tree.add(62);
-        tree.add(78);
-        tree.add(88);
+        tree.add(78, 79);
+        tree.add(88, 88);
 //
 //        tree.add(2);
 //        tree.add(3);
 //        tree.add(4);
 //        tree.add(5);
 
-        tree.printTreeIndent(tree.getRoot(), 0);
+//        tree.printTreeIndent(tree.getRoot(), 0);
 
 
     }

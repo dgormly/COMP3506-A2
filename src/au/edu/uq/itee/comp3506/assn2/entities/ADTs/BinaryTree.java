@@ -1,19 +1,39 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
-public class BinaryTree<E> implements AbstractBinaryTree<E> {
 
-    private Node<E> root = null;
-    private ProbeHashMap<E, Node<E>> map = new ProbeHashMap<>();
+
+
+
+
+
+/**
+ * Generic Binary tree Implementation of a Data Tree.
+ * Each node has, at most, two child nodes and is sorted by the Comparable.
+ * insert and removal time.
+ *
+ * Created for COMP3506 Assignment 2 at the University Of Queensland.
+ *
+ * @author Daniel Gormly, Student Number: 43503348
+ *
+ * @param <K>
+ *     Key to order the tree by.
+ * @param <E>
+ *     Element type to store inside the nodes.
+ */
+public class BinaryTree<K extends Comparable<K>, E> implements AbstractBinaryTree<K, E> {
+
+    private Node<K, E> root = null;
+    private ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();
 
     private int size = 0;
 
     @Override
-    public Node<E> addRoot(E element) {
+    public Node<K, E> addRoot(K key, E element) {
         if (size() > 0) {
             return null;
         } else {
-            root = new Node<>(null, element);
-            map.put(element, root);
+            root = new Node<>(null, key, element);
+            map.put(key, root);
             size++;
             return root;
         }
@@ -22,31 +42,24 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
 
     /**
      *
+     *
      * @param element
      * @return
      */
-    public Node<E> add(E element) {
-        Node<E> current = root;
-        Node<E> newNode;
-        int hash = element.hashCode();
+    public Node<K, E> add(K key, E element) {
+        Node<K, E> current = root;
+        Node<K, E> newNode;
         while (true) {
-            if (hash < current.getElement().hashCode()) {
+            /* Add to the left if key less or equal to current. */
+            if (key.compareTo(current.key) <= 0) {
                 if (current.left == null) {
-                    newNode = new Node<>(current, element);
-                    current.left = newNode;
-                    map.put(element, newNode);
-                    size++;
-                    return newNode;
+                    return addLeft(current, key, element);
                 } else {
                     current = current.left;
                 }
             } else {
                 if (current.right == null) {
-                    newNode = new Node<E>(current, element);
-                    current.right = newNode;
-                    map.put(element, newNode);
-                    size++;
-                    return newNode;
+                    return addRight(current, key, element);
                 } else {
                     current = current.right;
                 }
@@ -55,13 +68,13 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
     }
 
     @Override
-    public Node<E> addLeft(Node<E> parent, E element) {
+    public Node<K, E> addLeft(Node<K, E> parent, K key, E element) {
         if (parent == null || parent.left != null) {
             return null;
         } else {
-            Node<E> n = new Node<>(parent, element);
+            Node<K, E> n = new Node<>(parent, key, element);
             parent.left = n;
-            map.put(element, n);
+            map.put(key, n);
             size++;
             return n;
         }
@@ -69,14 +82,14 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
 
 
     @Override
-    public Node<E> addRight(Node<E> parent, E element) {
+    public Node<K, E> addRight(Node<K, E> parent, K key, E element) {
 
         if (parent == null || parent.right != null) {
             return null;
         } else {
-            Node<E> n = new Node<>(parent, element);
+            Node<K, E> n = new Node<>(parent, key, element);
             parent.right = n;
-            map.put(element, n);
+            map.put(key, n);
             size++;
             return n;
         }
@@ -84,42 +97,23 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
 
 
     @Override
-    public Node<E> getRoot() {
+    public Node<K, E> getRoot() {
         return root;
     }
 
 
     @Override
-    public Node<E> get(E element) {
-        return map.get(element);
+    public Node<K, E> get(K key) {
+        return map.get(key);
     }
 
 
     // TODO update hashmap to update keys.
     @Override
-    public Node<E> set(Node<E> position, E element) {
+    public Node<K, E> set(Node<K, E> position, E element) {
         E e = position.element;
         position.element = element;
         return position;
-    }
-
-
-    @Override
-    public Node<E> remove(Node<E> position) {
-        if (position == null || position.parent == null) {
-            return null;
-        } else {
-            if (position.parent.left == position) {
-                position.parent.left = position.left;
-                position.left.parent = position.parent;
-            } else {
-                position.parent.right = position.left;
-                position.left.parent = position.parent;
-            }
-            map.remove(position.element);
-            size--;
-            return position;
-        }
     }
 
 
@@ -135,7 +129,7 @@ public class BinaryTree<E> implements AbstractBinaryTree<E> {
     }
 
 
-    public void printInOrder(Node<E> node) {
+    public void printInOrder(Node<K, E> node) {
 
         if (node == null) {
             return;

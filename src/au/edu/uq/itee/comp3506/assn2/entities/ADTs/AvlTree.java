@@ -1,21 +1,46 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
-public class AvlTree<E> extends BinaryTree<E> {
 
-    public int getDepth(Node<E> node) {
-        return 0;
-    }
+/**
+ * A balanced implementation of a Binary tree allowing for a more consistant O(Logn)
+ * insert and removal time.
+ *
+ * Created for COMP3506 Assignment 2 at the University Of Queensland.
+ *
+ * @author Daniel Gormly, Student Number: 43503348
+ *
+ * @param <E>
+ *     Element type to store inside the nodes.
+ */
+public class AvlTree<K extends Comparable<K>, E> extends BinaryTree<K, E> implements AbstractBinaryTree<K, E> {
 
-
-    public static int height(Node node) {
+    /**
+     * Returns the distance to the root node of the tree of a given node.
+     *
+     * @param node,
+     *  Node to return the distance of from the root node.
+     *
+     * @return
+     *      Number of edges to the top of the tree (root).
+     *
+     */
+    private static int height(Node node) {
         return node != null ? node.height : 0;
     }
 
 
-
-    public Node<E> balance(Node<E> root) {
-        int rHeight = 0;
-        int lHeight = 0;
+    /**
+     * Checks whether the tree needs balancing. If it does it will call the required rotation.
+     *
+     * @param root
+     *      Node that may need rebalancing.
+     * @return
+     *      The given node after it has been rebalanced.
+     *
+     */
+    private Node<K, E> balanceTree(Node<K, E> root) {
+        int rHeight;
+        int lHeight;
         if (height(root.left) - height(root.right) > 1) {
 
             lHeight = root.left == null ? 0 : height(root.left.left);
@@ -44,48 +69,64 @@ public class AvlTree<E> extends BinaryTree<E> {
     }
 
 
-
+    /**
+     * Inserts a node into the tree in a position that maintains the order.
+     *
+     * The element will be sorted by it's hashcode.
+     *
+     * @param element
+     *      Element to be inserted.
+     * @return
+     *      The node after insertion.
+     */
     @Override
-    public Node<E> add(E element) {
+    public Node<K, E> add(K key, E element) {
 
-        Node<E> current = getRoot();
-        while (!current.getElement().equals(element))
-        {
-            if (element.hashCode() < current.getElement().hashCode())
-            {
-                if (current.left != null) current = current.left;
-                else
-                {
-                    current.left = new Node<>(current, element);
+        Node<K, E> current = getRoot();
+        while (!current.getKey().equals(key)) {
+            if (key.compareTo(current.getKey()) == -1) {
+                if (current.left != null) {
+                    current = current.left;
+                } else {
+                    current.left = new Node<>(current, key, element);
                     current = current.left;
                 }
-            }
-            else if (element.hashCode() > current.getElement().hashCode())
-            {
-                if (current.right != null) current = current.right;
-                else
-                {
-                    current.right = new Node<E>(current, element);
+            } else if (key.compareTo(current.getKey()) == 1) {
+                if (current.right != null) {
+                    current = current.right;
+                } else {
+                    current.right = new Node<>(current, key, element);
                     current = current.right;
                 }
+            } else {
+                return getRoot();
             }
-            else return getRoot(); /* Value was in the tree, dumbass */
         }
 
         do {
             current = current.parent;
             changeHeight(current);
-            current = balance(current);
+            current = balanceTree(current);
         } while (current.parent != null);
+
         return current;
     }
 
 
-
-    public Node<E> rotateLeft(Node<E> root) {
-        Node<E> node = root.right;
+    /**
+     * Does a tri-rotation to the left.
+     *
+     * @param root,
+     *      Parent node of the three nodes to rotate.
+     *
+     * @return
+     *      Root node after the rotation has been applied.
+     */
+    private Node<K, E> rotateLeft(Node<K, E> root) {
+        Node<K, E> node = root.right;
 
         if (root.parent != null) {
+            // Check if left or right node.
             if (root.parent.right == root) {
                 root.parent.right = node;
             } else {
@@ -108,9 +149,17 @@ public class AvlTree<E> extends BinaryTree<E> {
 
 
 
-
-    public Node<E> rotateRight(Node<E> root) {
-        Node<E> node = root.left;
+    /**
+     * Does a tri-rotation to the right.
+     *
+     * @param root
+     *      Parent node of the three nodes to rotate.
+     *
+     * @return
+     *      Root node after the reation has been applied.
+     */
+    public Node<K, E> rotateRight(Node<K, E> root) {
+        Node<K, E> node = root.left;
 
         if (root.parent != null) {
             if (root.parent.left == root) {
@@ -119,6 +168,7 @@ public class AvlTree<E> extends BinaryTree<E> {
                 root.parent.right = node;
             }
         }
+
         node.parent = root.parent;
         root.parent = node;
         root.left = node.right;
@@ -135,35 +185,37 @@ public class AvlTree<E> extends BinaryTree<E> {
     }
 
 
-
-
-
-    public Node<E> insert(Node<E> node) {
-        return null;
-    }
-
-
-    private void changeHeight(Node<E> node) {
+    /**
+     * Increments the height the given node by one.
+     *
+     * @param node
+     *      Node to increment.
+     *
+     * @return
+     *      New height of the given node.
+     */
+    private int changeHeight(Node<K, E> node) {
         node.height = 1 + Math.max(height(node.left), height(node.right));
+        return node.height;
     }
 
 
-    /* For testing purposes! */
-    public void printTreeIndent(Node<E> node, int indent) {
-        int ix;
-        for (ix = 0; ix < indent; ix++) System.out.print(" ");
-        if (node == null) System.out.print("Empty child\n");
-        else
-        {
-            System.out.printf("node: %s; height: %d\n", node.element, node.height);
-            printTreeIndent(node.left, indent + 4);
-            printTreeIndent(node.right, indent + 4);
-        }
-    }
 
-    public void printTree(Node<E> node)
-    {
-        printTreeIndent(node, 0);
-    }
+//    public void printTreeIndent(Node<E> node, int indent) {
+//        int ix;
+//        for (ix = 0; ix < indent; ix++) System.out.print(" ");
+//        if (node == null) System.out.print("Empty child\n");
+//        else
+//        {
+//            System.out.printf("node: %s; height: %d\n", node.element, node.height);
+//            printTreeIndent(node.left, indent + 4);
+//            printTreeIndent(node.right, indent + 4);
+//        }
+//    }
+//
+//    public void printTree(Node<E> node)
+//    {
+//        printTreeIndent(node, 0);
+//    }
 
 }
