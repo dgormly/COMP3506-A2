@@ -22,7 +22,7 @@ public final class AutoTester implements TestAPI {
 	/* Data sets. */
 	AbstractBinaryTree<LocalDateTime, CallRecord> recordsTree;
 	AbstractMap<Integer, Integer> switchesMap;
-	FileReader fileReader = new FileReader();
+	FileReader fileReader = new FileReader(FileReader.SWITCHES_FILE, FileReader.RECORD_FILE);
 
 
 	public AutoTester()  {
@@ -32,6 +32,7 @@ public final class AutoTester implements TestAPI {
 		/* Read in data from data sets. */
 		switchesMap = fileReader.getSwitchesMap();
 		recordsTree = fileReader.getAllCallRecords();
+		System.out.println(fileReader.getCrErrors());
 	}
 	
 	@Override
