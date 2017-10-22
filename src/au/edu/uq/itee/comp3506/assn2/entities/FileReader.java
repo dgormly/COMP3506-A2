@@ -1,9 +1,7 @@
 package au.edu.uq.itee.comp3506.assn2.entities;
 
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractBinaryTree;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.*;
 import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AvlTree;
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.ProbeHashMap;
 import com.sun.tools.javac.comp.Check;
 
 import java.io.BufferedReader;
@@ -11,9 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FileReader {
 
@@ -25,10 +21,9 @@ public class FileReader {
 
     private AbstractBinaryTree<LocalDateTime, CallRecord> recordsTree = new AvlTree<>();
     private AbstractBinaryTree<LocalDateTime, CallRecord> invalidRecords = new AvlTree<>();
-    private AbstractBinaryTree<LocalDateTime, CallRecord> validRecords = new AvlTree<>();
 
-    private AbstractMap<Long, CallRecord> dialerRecords = new ProbeHashMap<>();
-    private AbstractMap<Long, CallRecord> recieverRecords = new ProbeHashMap<>();
+    private TreeMultiMap<Long, LocalDateTime, CallRecord> dialerRecords = new TreeMultiMap<>();
+    private TreeMultiMap<Long, LocalDateTime, CallRecord> receiverRecords = new TreeMultiMap<>();
     private ProbeHashMap<Integer, Integer>  switchesMap = new ProbeHashMap<>();
 
     private int crErrors = 0;
@@ -72,8 +67,8 @@ public class FileReader {
 
                 if (cr != null) {
                     recordsTree.add(cr.getTimeStamp(), cr);
-                    dialerRecords.put(cr.getDialler(), cr);
-                    recieverRecords.put(cr.getReceiver(), cr);
+                    dialerRecords.put(cr.getReceiver(), cr.getTimeStamp(), cr);
+                    receiverRecords.put(cr.getReceiver(), cr.getTimeStamp(), cr);
                 } else {
                     crErrors++;
                 }
@@ -148,7 +143,6 @@ public class FileReader {
 
 
             CallRecord cr = new CallRecord(dialer, receiver, diallerSwitch, receiverSwitch, path, stamp);
-            recordsTree.add(stamp, cr);
             return cr;
         } catch (Exception e) {
             return null;

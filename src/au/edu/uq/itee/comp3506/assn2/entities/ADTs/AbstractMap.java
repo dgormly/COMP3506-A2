@@ -30,6 +30,19 @@ public interface AbstractMap<K, V> {
 
 
     /**
+     * Checks if the map contains a given key.
+     *
+     * @param key
+     *  Key to search for.
+     *
+     * @return
+     *      true if key is found,
+     *      false otherwise.
+     */
+    boolean contains(K key);
+
+
+    /**
      * Stores a key-value pair.
      *
      * @param key

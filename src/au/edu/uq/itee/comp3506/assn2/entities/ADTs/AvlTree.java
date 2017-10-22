@@ -114,6 +114,7 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
             }
         }
 
+
         do {
             current = current.parent;
             changeHeight(current);

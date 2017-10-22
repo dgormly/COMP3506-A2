@@ -67,4 +67,12 @@ public class HashMapTest {
         assertEquals("Map shouldn't be empty", false, map.isEmpty());
     }
 
+
+    @Test
+    public void containsTest() {
+        map.put("Hello", 0);
+        assertEquals("Map should contain 'Hello'", true, map.contains("Hello"));
+        assertEquals("Map should not contain 'World'", false, map.contains("World"));
+    }
+
 }

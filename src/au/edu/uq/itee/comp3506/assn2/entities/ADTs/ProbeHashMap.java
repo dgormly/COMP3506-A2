@@ -25,8 +25,6 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  * @param <V>
  *     Value Object to use as value key.
  *
- * TODO Implement auto-resizing and update tests.
- *
  */
 public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
@@ -61,6 +59,31 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     @Override
     public int size() {
         return numEntries;
+    }
+
+
+    /**
+     * Checks if the map contains a given key.
+     *
+     * @param key
+     *  Key to search for.
+     *
+     * @return
+     *      true if key is found,
+     *      false otherwise.
+     */
+    @Override
+    public boolean contains(K key) {
+        int pos = key.hashCode();
+        for (int i = 0; i < map.length; i++) {
+            if (map[(pos + i) % map.length] == null) {
+                return false;
+            }
+            if (map[(pos + i) % map.length].getK().equals(key)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -235,7 +258,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
         int home = key.hashCode() % map.length;
 
         for (int i = 0; i < map.length; i++) {
-            int pos = (home + i) % map.length;
+            int pos = Math.abs((home + i) % map.length);
             if (map[pos] != null && map[pos] != DEFUNCT && map[pos].getK().equals(key)) {
                 return pos;
             }
