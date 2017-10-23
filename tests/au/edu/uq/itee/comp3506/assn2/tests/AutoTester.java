@@ -42,9 +42,6 @@ public final class AutoTester implements TestAPI {
 
 		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
 		List<Long> list = new ArrayList<>();
-		System.out.println(recordsTree.size());
-		System.out.println(switchesMap.size());
-
 		if (tree == null) {
 			return list;
 		}
@@ -68,14 +65,14 @@ public final class AutoTester implements TestAPI {
 		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
 		List<Long> list = new ArrayList<>();
 
-		Node<LocalDateTime, CallRecord> firstNode = tree.getFrom(startTime);
-		Node<LocalDateTime, CallRecord> lastNode = tree.getTo(endTime);
+		Node<LocalDateTime, CallRecord> fromNode = tree.getFrom(startTime);
+		Node<LocalDateTime, CallRecord> toNode = tree.getTo(endTime);
 
-
-		while (firstNode != lastNode) {
-			list.add(firstNode.getElement().getReceiver());
-			firstNode = firstNode.getNext(firstNode);
+		while (fromNode.getKey().compareTo(endTime) <= 0 && fromNode != recordsTree.getLast()) {
+			list.add(fromNode.getElement().getReceiver());
+			fromNode = fromNode.getNext(fromNode);
 		}
+
 
 		return list;
 	}
@@ -143,7 +140,17 @@ public final class AutoTester implements TestAPI {
 	@Override
 	public List<CallRecord> callsMade(LocalDateTime startTime, LocalDateTime endTime) {
 
-		return null;
+		Node<LocalDateTime, CallRecord> fromNode = recordsTree.getFrom(startTime);
+		Node<LocalDateTime, CallRecord> toNode = recordsTree.getTo(endTime);
+
+		List<CallRecord> list = new ArrayList<>();
+
+		while (fromNode.getKey().compareTo(endTime) <= 0 && fromNode != recordsTree.getLast()) {
+			list.add(fromNode.getElement());
+			fromNode = fromNode.getNext(fromNode);
+		}
+
+		return list;
 	}
 	
 	public static void main(String[] args) {
@@ -151,15 +158,8 @@ public final class AutoTester implements TestAPI {
 		LocalDateTime start = LocalDateTime.parse("2017-09-07T03:04:55.529");
 		LocalDateTime end = LocalDateTime.parse("2017-09-16T16:40:29.461");
 
-		//System.out.println(test.recordsTree.size());
-
-		List<Long> receivers = test.called(Long.parseLong("5618941102"));
 
 
-		System.out.println("List size: " + receivers.size());
-		//for (Long receiver : receivers) {
-		//	System.out.println(receiver);
-		//}
 
 		//receivers = test.called(Long.parseLong("5618941102"), start, end);
 	}

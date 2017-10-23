@@ -45,7 +45,6 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
         int rHeight;
         int lHeight;
         if (height(root.left) - height(root.right) > 1) {
-
             lHeight = root.left == null ? 0 : height(root.left.left);
             rHeight = root.left == null ? 0 : height(root.left.right);
 
@@ -56,10 +55,10 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
                 root = rotateRight(root);
             }
 
-        } else if ((height(root.right) - height(root.left)) > 1) {
+        } else if (height(root.right) - height(root.left) > 1) {
 
-            lHeight = root.right == null ? 0 : height(root.right.right);
-            rHeight = root.right == null ? 0 : height(root.right.left);
+            lHeight = root.right.right == null ? 0 : height(root.right.right);
+            rHeight = root.right.left == null ? 0 : height(root.right.left);
 
             if (lHeight > rHeight) {
                 root = rotateLeft(root);
@@ -93,14 +92,13 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
         }
 
         current = getRoot();
-        while (true) {
-            if (key.compareTo(current.getKey()) <= 0) {
+        while (!current.getKey().equals(key)) {
+            if (key.compareTo(current.getKey()) < 0) {
                 if (current.left != null) {
                     current = current.left;
                 } else {
                     current.left = new Node<>(current, key, element);
                     current = current.left;
-                    break;
                 }
             } else if (key.compareTo(current.getKey()) > 0) {
                 if (current.right != null) {
@@ -108,11 +106,8 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
                 } else {
                     current.right = new Node<>(current, key, element);
                     current = current.right;
-                    break;
                 }
             } else {
-                map.put(current.key, current);
-                size++;
                 return getRoot();
             }
         }
@@ -160,6 +155,10 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
         }
         node.left = root;
 
+        if (node.parent == null) {
+            this.root = node;
+        }
+
         /* Adjust heights for nodes from base. */
         changeHeight(root);
         changeHeight(node);
@@ -198,6 +197,10 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
         }
 
         node.right = root;
+
+        if (node.parent == null) {
+            this.root = node;
+        }
 
         /* Adjust heights for nodes from base. */
         changeHeight(root);

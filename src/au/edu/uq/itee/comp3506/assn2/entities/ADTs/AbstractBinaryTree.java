@@ -52,7 +52,7 @@ public interface AbstractBinaryTree<K extends Comparable<? super K>, E> {
         protected Node<K, E> right = null;
         protected K key;
         protected E element;
-        protected int height = 0;
+        protected int height = 1;
 
 
         Node(Node<K, E> parent, K key, E element) {

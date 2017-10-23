@@ -22,7 +22,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  */
 public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractBinaryTree<K, E> {
 
-    private Node<K, E> root = null;
+    protected Node<K, E> root = null;
     protected ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();
 
     protected int size = 0;

@@ -20,23 +20,14 @@ public class AvlTreeTest {
 
     @Test
     public void restructure() {
-        root = tree.add(44, 44);
-        tree.add(17, 17);
-        tree.add(32, 32);
-        //tree.add(44);
-        tree.add(48, 48);
-        tree.add(50, 50);
-        //tree.add(62);
-        tree.add(78, 79);
-        tree.add(88, 88);
-//
-//        tree.add(2);
-//        tree.add(3);
-//        tree.add(4);
-//        tree.add(5);
-
-//        tree.printTreeIndent(tree.getRoot(), 0);
-
-
+        root = tree.add(1, 1);
+        tree.add(2, 2);
+        tree.add(3, 3);
+        assertEquals("Root should equal 2", 2, (int) tree.getRoot().getKey());
+        tree.add(4, 4);
+        tree.add(5, 5);
+        tree.add(6, 6);
+        tree.add(7, 7);
+        assertEquals("Root should equal 4", 4, (int) tree.getRoot().getKey());
     }
 }
