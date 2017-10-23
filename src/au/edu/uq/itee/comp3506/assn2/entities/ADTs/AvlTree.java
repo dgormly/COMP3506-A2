@@ -234,7 +234,7 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
         if (root != null) {
             inOrderTraverse(root.left, start, finish);
 
-            if (start.compareTo(root.getKey()) <= 0 && root.getKey().compareTo(finish) <= 0) {
+            if (root.getKey().compareTo(start) > 0 && root.getKey().compareTo(finish) < 0) {
                 list.addToEnd(root.getElement());
             }
 
