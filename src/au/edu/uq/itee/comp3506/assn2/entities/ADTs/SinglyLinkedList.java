@@ -57,8 +57,8 @@ public class SinglyLinkedList<T> implements AbstractLinkedList<T> {
         if (this.isEmpty()) {
             return null;
         } else if (isLast()) {
-            /* Return current item if already at the tail. */
-            return cursor.getElement();
+            /* Return null item if already at the tail. */
+            return null;
         }
         /* Return next item in chain. */
         cursor = cursor.getNext();

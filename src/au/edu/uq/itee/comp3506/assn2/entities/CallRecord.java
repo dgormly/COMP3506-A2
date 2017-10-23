@@ -99,9 +99,9 @@ public class CallRecord {
 
 		if (connectionPath.get(connectionPath.size() - 1) != getReceiverSwitch()) {
                 //System.out.println("3");
-			return receiverSwitch;
+			return connectionPath.get(connectionPath.size() - 1);
 		}
-		return 0;
+		return -1;
 
 	}
 

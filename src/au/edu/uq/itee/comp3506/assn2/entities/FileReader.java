@@ -129,6 +129,8 @@ public class FileReader {
                 if (switchesMap.contains(i)) {
                     int count = switchesMap.get(i) + 1;
                     switchesMap.put(i, count);
+                } else {
+                    return null;
                 }
             }
 
@@ -182,9 +184,11 @@ public class FileReader {
             switchesMap = new ProbeHashMap<>();
             int mapSize = (int) Math.floor(Integer.parseInt(line) * 1.25);
             switchesMap = new ProbeHashMap<>(mapSize);
+
             while ((line = br.readLine()) != null) {
                 switchesMap.put(Integer.parseInt(line), 0);
             }
+
             br.close();
             fr.close();
         } catch (IOException e) {

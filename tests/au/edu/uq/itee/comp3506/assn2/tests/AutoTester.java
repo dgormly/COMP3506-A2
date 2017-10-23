@@ -147,34 +147,97 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
 		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
 
-//		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
 
-//		list.add(linkedList.getFirst().getReceiver());
-//		while (linkedList.hasNext()) {
-//			if (linkedList.getElement().getFault() != null) {
-//
-//			}
-//		}
+		linkedList.getFirst();
+		do {
+			int fault = linkedList.getElement().getFault();
+			if (fault != -1) {
+				list.add(fault);
+				fault = 0;
+			}
+		} while (linkedList.getNext() != null);
 
 		return list;
 	}
 
 	@Override
 	public List<Integer> findConnectionFault(long dialler, LocalDateTime startTime, LocalDateTime endTime) {
-		// TODO Auto-generated method stub
-		return null;
+		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
+		List<Integer> list = new ArrayList<>();
+
+
+		if (tree == null) {
+			return list;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFrom(startTime);
+		Node<LocalDateTime, CallRecord> lastNode = tree.getFrom(endTime);
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+
+		linkedList.getFirst();
+		do {
+			int fault = linkedList.getElement().getFault();
+			if (fault != -1) {
+				list.add(fault);
+				fault = 0;
+			}
+		} while (linkedList.getNext() != null);
+
+		return list;
 	}
 
 	@Override
 	public List<Integer> findReceivingFault(long reciever) {
-		// TODO Auto-generated method stub
-		return null;
+		AvlTree<LocalDateTime, CallRecord> tree = receiverMultiMap.getTree(reciever);
+		List<Integer> list = new ArrayList<>();
+
+
+		if (tree == null) {
+			return list;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
+		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+
+		linkedList.getFirst();
+		do {
+			int fault = linkedList.getElement().getFault();
+			if (fault != -1) {
+				list.add(fault);
+			}
+		} while (linkedList.getNext() != null);
+
+		return list;
 	}
 
 	@Override
 	public List<Integer> findReceivingFault(long reciever, LocalDateTime startTime, LocalDateTime endTime) {
-		// TODO Auto-generated method stub
-		return null;
+		AvlTree<LocalDateTime, CallRecord> tree = receiverMultiMap.getTree(reciever);
+		List<Integer> list = new ArrayList<>();
+
+
+		if (tree == null) {
+			return list;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFrom(startTime);
+		Node<LocalDateTime, CallRecord> lastNode = tree.getFrom(endTime);
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+		linkedList.getFirst();
+
+		do {
+			int fault = linkedList.getElement().getFault();
+			if (fault != -1) {
+				list.add(fault);
+			}
+		} while (linkedList.hasNext());
+
+		return list;
 	}
 
 	@Override
@@ -229,13 +292,6 @@ public final class AutoTester implements TestAPI {
 	
 	public static void main(String[] args) {
 		AutoTester test = new AutoTester();
-		LocalDateTime start = LocalDateTime.parse("2017-09-07T03:04:55.529");
-		LocalDateTime end = LocalDateTime.parse("2017-09-16T16:40:29.461");
-
-
-
-
-		//receivers = test.called(Long.parseLong("5618941102"), start, end);
 	}
 
 }
