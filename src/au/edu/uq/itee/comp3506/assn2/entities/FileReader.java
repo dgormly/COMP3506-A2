@@ -2,7 +2,6 @@ package au.edu.uq.itee.comp3506.assn2.entities;
 
 import au.edu.uq.itee.comp3506.assn2.entities.ADTs.*;
 import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
-import com.sun.tools.javac.comp.Check;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -108,66 +107,59 @@ public class FileReader {
             int receiverSwitch = Integer.parseInt(variables[variables.length - 3]);
             LocalDateTime stamp = LocalDateTime.parse(variables[variables.length - 1]);
             List<Integer> path = new ArrayList<>();
-            int length = variables.length;
 
-//            // Corrupt
-//            if (!variables[1].equals(variables[2]) || !variables[length - 3].equals(variables[length - 4])) {
-//                return null;
-//            }
-//
-//            if (variables[0].length() != 10 || variables[length - 2].length() != 10) {
-//                return null;
-//            }
-//
-//            if (variables.length < 6) {
-//                return null;
-//            }
-//
-//
-//            for (int i = 2; i < variables.length - 2; i++) {
-////                if (i > 2 && i < variables.length - 4) {
-////                    // Corrupt
-////                    if (variables[i].equals(variables[i + 1])) {
-////                        return null;
-////                    }
-////                }
-//
-//                int switchId = Integer.parseInt(variables[i]);
-//                // Corrupt: Check if in switches list.
-//                if (switchesMap.get(switchId) == null) {
-//                    return null;
-//                }
-//
-//                path.add(switchId);
-//            }
 
+            if (variables[0].length() != 10) {
+                return null;
+            }
+
+            if (variables[variables.length - 2].length() != 10) {
+                return null;
+            }
+
+
+            for (int i = 2; i < variables.length - 3; i++) {
+                path.add(Integer.parseInt(variables[i]));
+            }
 
             CallRecord cr = new CallRecord(dialer, receiver, diallerSwitch, receiverSwitch, path, stamp);
+
+            for (int i: cr.getConnectionPath()) {
+                System.out.println(i);
+            }
 
             List<Integer> connectionPath = cr.getConnectionPath();
             int size = connectionPath.size();
 
             if (size < 2) {
+                System.out.println("1");
                 return null;
             }
 
-            if (connectionPath.get(0) == cr.getDiallerSwitch()) {
+            if (connectionPath.get(0) != cr.getDiallerSwitch()) {
+                System.out.println("2");
                 return null;
             }
 
-            if (connectionPath.get(size - 1) == cr.getDiallerSwitch()) {
+
+            if (connectionPath.get(size - 1) != cr.getReceiverSwitch()) {
+                System.out.println("3");
                 return null;
             }
 
-            for (int i = 1; i < size - 2; i++) {
-                if (connectionPath.get(i) == connectionPath.get(i + 1)) {
+            for (int i = 0; i < size - 1; i++) {
+                if (connectionPath.get(i).equals(connectionPath.get(i + 1))) {
+                    System.out.println("4");
                     return null;
                 }
             }
 
 
             return cr;
+
         } catch (Exception e) {
+            System.err.println("Error found: ");
+            e.printStackTrace();
             return null;
         }
     }

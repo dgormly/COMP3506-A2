@@ -33,14 +33,21 @@ public class FileReaderTest {
         try {
             fr.importSwitches(FileReader.SWITCHES_FILE);
             List<String> records = FileReader.readFile("corruptRecords.txt");
-            for (String line : records) {
-                assertEquals("Expected null", fr.isValidRecord(line), null);
+            for (int i = 0; i < 8; i++) {
+                assertEquals("Expected null", fr.isValidRecord(records.get(i)), null);
+            }
+
+            for (int i = 8; i < records.size(); i++) {
+                System.err.println(records.get(i));
+                assertEquals("Expected Valid", fr.isValidRecord(records.get(i)) != null, true);
             }
 
         } catch (IOException e) {
             System.out.println("Failed to load test file.");
             e.printStackTrace();
         }
+
+        System.err.println("BREAKER");
     }
 
     @Test

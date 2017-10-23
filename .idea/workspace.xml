@@ -6,8 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19704f59-8f57-41f3-aacf-f8367bc9b451" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/entities/ADTs/TreeMultiMap.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/test/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/tests/TestShort.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/entities/FileReader.class" afterPath="$PROJECT_DIR$/out/production/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/entities/FileReader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.class" afterPath="$PROJECT_DIR$/out/test/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.class" afterPath="$PROJECT_DIR$/out/test/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/corruptRecords.txt" afterPath="$PROJECT_DIR$/data/corruptRecords.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java" afterPath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" afterPath="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" />
@@ -37,24 +39,17 @@
       <FILTER>au.edu.uq.itee.comp3506.assn2.entities.ADTs.BinaryTree</FILTER>
       <FILTER>au.edu.uq.itee.comp3506.assn2.entities.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/COMP3506_A2$FileReaderTest.coverage" NAME="FileReaderTest Coverage Results" MODIFIED="1508725379033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>au.edu.uq.itee.comp3506.assn2.tests.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/COMP3506_A2$AutoTester.coverage" NAME="AutoTester Coverage Results" MODIFIED="1508694997233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>au.edu.uq.itee.comp3506.assn2.tests.*</FILTER>
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44635418">
+    <splitter split-orientation="horizontal" split-proportion="0.47395834">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="FileReader.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="163" column="31" lean-forward="true" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="switches.txt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data/switches.txt">
               <provider selected="true" editor-type-id="text-editor">
@@ -65,11 +60,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="corruptRecords.txt" pinned="false" current-in-tab="false">
+          <file leaf-file-name="corruptRecords.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/data/corruptRecords.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -78,18 +73,18 @@
           <file leaf-file-name="HashMapTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/HashMapTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="736">
-                  <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+                <state relative-caret-position="1065">
+                  <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AutoTester.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AutoTester.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="386">
-                  <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+                <state relative-caret-position="270">
+                  <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -100,7 +95,7 @@
           <file leaf-file-name="TestShort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/TestShort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="283">
+                <state relative-caret-position="3150">
                   <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
                   <folding>
                     <element signature="e#524#525#0" expanded="true" />
@@ -113,7 +108,7 @@
           <file leaf-file-name="call-records.txt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data/call-records.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
+                <state relative-caret-position="60">
                   <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
                   <folding />
                 </state>
@@ -124,7 +119,7 @@
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AvlTreeTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="390">
-                  <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+                  <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -133,8 +128,8 @@
           <file leaf-file-name="call-records-short.txt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data/call-records-short.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2220">
-                  <caret line="148" column="40" lean-forward="false" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
+                <state relative-caret-position="9660">
+                  <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="645" selection-end-column="87" />
                   <folding />
                 </state>
               </provider>
@@ -144,11 +139,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AbstractBinaryTree.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractBinaryTree.java">
+          <file leaf-file-name="AbstractLinkedList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractLinkedList.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="821">
-                  <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+                <state relative-caret-position="255">
+                  <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -167,9 +162,31 @@
           <file leaf-file-name="ProbeHashMap.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/ProbeHashMap.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="334">
-                  <caret line="139" column="25" lean-forward="true" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+                <state relative-caret-position="1995">
+                  <caret line="139" column="25" lean-forward="false" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SinglyLinkedList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/SinglyLinkedList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FileReader.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-179">
+                  <caret line="115" column="46" lean-forward="false" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -177,8 +194,8 @@
           <file leaf-file-name="TreeMultiMap.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/TreeMultiMap.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+                <state relative-caret-position="315">
+                  <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -187,8 +204,8 @@
           <file leaf-file-name="FileReaderTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+                <state relative-caret-position="405">
+                  <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -197,7 +214,7 @@
           <file leaf-file-name="BinaryTreeTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/BinaryTreeTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="328">
+                <state relative-caret-position="1305">
                   <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -209,8 +226,8 @@
           <file leaf-file-name="AvlTree.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="194" column="36" lean-forward="true" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
+                <state relative-caret-position="2880">
+                  <caret line="194" column="36" lean-forward="false" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -219,7 +236,7 @@
           <file leaf-file-name="BinaryTree.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="883">
+                <state relative-caret-position="2265">
                   <caret line="159" column="28" lean-forward="false" selection-start-line="159" selection-start-column="28" selection-end-line="159" selection-end-column="28" />
                   <folding />
                 </state>
@@ -247,9 +264,9 @@
       <find>traverse</find>
       <find>DONE</find>
       <find>Abstract</find>
+      <find>Abstrac</find>
       <find>print</find>
       <find>75</find>
-      <find>Abstrac</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -299,8 +316,8 @@
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java" />
         <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" />
         <option value="$PROJECT_DIR$/data/corruptRecords.txt" />
-        <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java" />
+        <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.java" />
       </list>
     </option>
   </component>
@@ -323,7 +340,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -383,8 +402,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -415,7 +432,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestShort.TotalNumberOfRecords">
+  <component name="RunManager" selected="JUnit.FileReaderTest">
     <configuration name="AutoTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -435,7 +452,7 @@
       <module name="COMP3506-A2" />
       <envs />
     </configuration>
-    <configuration name="BinaryTreeTest.traverseTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="au.edu.uq.itee.comp3506.assn2.tests.*" />
@@ -446,9 +463,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="au.edu.uq.itee.comp3506.assn2.tests" />
-      <option name="MAIN_CLASS_NAME" value="au.edu.uq.itee.comp3506.assn2.tests.BinaryTreeTest" />
-      <option name="METHOD_NAME" value="traverseTree" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="au.edu.uq.itee.comp3506.assn2.tests.FileReaderTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -617,18 +634,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.AutoTester" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BinaryTreeTest.traverseTree" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestShort" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestShort.TotalNumberOfRecords" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.FileReaderTest.parseRecordsTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestShort" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestShort.TotalNumberOfRecords" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.FileReaderTest.parseRecordsTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.FileReaderTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestShort.TotalNumberOfRecords" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FileReaderTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.FileReaderTest.parseRecordsTest" />
         <item index="2" class="java.lang.String" itemvalue="Application.AutoTester" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestShort" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BinaryTreeTest.traverseTree" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestShort.TotalNumberOfRecords" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestShort" />
       </list>
     </recent_temporary>
   </component>
@@ -671,35 +688,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FileReaderTest_parseRecordsTest - 2017.10.23 at 11h 30m 19s.xml">
+    <history-entry file="FileReaderTest - 2017.10.23 at 12h 25m 59s.xml">
+      <configuration name="FileReaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileReaderTest - 2017.10.23 at 12h 27m 57s.xml">
+      <configuration name="FileReaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileReaderTest - 2017.10.23 at 12h 31m 58s.xml">
+      <configuration name="FileReaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileReaderTest - 2017.10.23 at 12h 32m 11s.xml">
+      <configuration name="FileReaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileReaderTest - 2017.10.23 at 12h 32m 59s.xml">
+      <configuration name="FileReaderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileReaderTest_parseRecordsTest - 2017.10.23 at 12h 14m 53s.xml">
       <configuration name="FileReaderTest.parseRecordsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileReaderTest_parseRecordsTest - 2017.10.23 at 11h 40m 49s.xml">
+    <history-entry file="FileReaderTest_parseRecordsTest - 2017.10.23 at 12h 15m 13s.xml">
       <configuration name="FileReaderTest.parseRecordsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 10h 45m 48s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
+    <history-entry file="FileReaderTest_parseRecordsTest - 2017.10.23 at 12h 18m 24s.xml">
+      <configuration name="FileReaderTest.parseRecordsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 10h 46m 07s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
+    <history-entry file="FileReaderTest_parseRecordsTest - 2017.10.23 at 12h 19m 03s.xml">
+      <configuration name="FileReaderTest.parseRecordsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 10h 49m 04s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 10h 53m 06s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 10h 53m 46s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 11h 00m 00s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 11h 01m 22s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort_TotalNumberOfRecords - 2017.10.23 at 11h 41m 04s.xml">
-      <configuration name="TestShort.TotalNumberOfRecords" configurationId="JUnit" />
+    <history-entry file="FileReaderTest_parseRecordsTest - 2017.10.23 at 12h 19m 51s.xml">
+      <configuration name="FileReaderTest.parseRecordsTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -714,7 +731,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -796,7 +813,7 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="102" />
+      <option name="time" value="104" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -922,14 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -1011,14 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/SinglyLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/api/TestAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1034,19 +1035,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractMap.java">
+    <entry file="file://$PROJECT_DIR$/data/call-records.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="40" selection-end-column="7" />
+        <state relative-caret-position="60">
+          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/TreeMultiMap.java">
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/HashMapTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="1065">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/TestShort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3150">
+          <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding>
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,42 +1070,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="40" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="194" column="36" lean-forward="true" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AvlTreeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/call-records.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/call-records-short.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="148" column="40" lean-forward="false" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
+        <state relative-caret-position="2880">
+          <caret line="194" column="36" lean-forward="false" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
+        <state relative-caret-position="2265">
           <caret line="159" column="28" lean-forward="false" selection-start-line="159" selection-start-column="28" selection-end-line="159" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/SinglyLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1106,17 +1118,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/ProbeHashMap.java">
+    <entry file="file://$PROJECT_DIR$/data/call-records-short.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="139" column="25" lean-forward="true" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+        <state relative-caret-position="9660">
+          <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="645" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/TreeMultiMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/BinaryTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="1305">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1124,56 +1144,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/HashMapTest.java">
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AvlTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state relative-caret-position="390">
+          <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/corruptRecords.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="75">
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.java">
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/ProbeHashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state relative-caret-position="1995">
+          <caret line="139" column="25" lean-forward="false" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="163" column="31" lean-forward="true" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/TestShort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding>
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="-179">
+          <caret line="115" column="46" lean-forward="false" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
