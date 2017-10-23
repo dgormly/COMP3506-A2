@@ -110,40 +110,62 @@ public class FileReader {
             List<Integer> path = new ArrayList<>();
             int length = variables.length;
 
-            // Corrupt
-            if (!variables[1].equals(variables[2]) || !variables[length - 3].equals(variables[length - 4])) {
-                return null;
-            }
-
-            if (variables[0].length() != 10 || variables[length - 2].length() != 10) {
-                return null;
-            }
-
-            if (variables.length < 6) {
-                return null;
-            }
-
-
-            for (int i = 2; i < variables.length - 2; i++) {
-                if (i > 2 && i < variables.length - 4) {
-                    // Corrupt
-                    if (variables[i].equals(variables[i + 1])) {
-                        return null;
-                    }
-                }
-
-                int switchId = Integer.parseInt(variables[i]);
-                // Corrupt: Check if in switches list.
-                if (switchesMap.get(switchId) == null) {
-                    return null;
-                }
-
-                path.add(switchId);
-            }
-
+//            // Corrupt
+//            if (!variables[1].equals(variables[2]) || !variables[length - 3].equals(variables[length - 4])) {
+//                return null;
+//            }
+//
+//            if (variables[0].length() != 10 || variables[length - 2].length() != 10) {
+//                return null;
+//            }
+//
+//            if (variables.length < 6) {
+//                return null;
+//            }
+//
+//
+//            for (int i = 2; i < variables.length - 2; i++) {
+////                if (i > 2 && i < variables.length - 4) {
+////                    // Corrupt
+////                    if (variables[i].equals(variables[i + 1])) {
+////                        return null;
+////                    }
+////                }
+//
+//                int switchId = Integer.parseInt(variables[i]);
+//                // Corrupt: Check if in switches list.
+//                if (switchesMap.get(switchId) == null) {
+//                    return null;
+//                }
+//
+//                path.add(switchId);
+//            }
 
 
             CallRecord cr = new CallRecord(dialer, receiver, diallerSwitch, receiverSwitch, path, stamp);
+
+            List<Integer> connectionPath = cr.getConnectionPath();
+            int size = connectionPath.size();
+
+            if (size < 2) {
+                return null;
+            }
+
+            if (connectionPath.get(0) == cr.getDiallerSwitch()) {
+                return null;
+            }
+
+            if (connectionPath.get(size - 1) == cr.getDiallerSwitch()) {
+                return null;
+            }
+
+            for (int i = 1; i < size - 2; i++) {
+                if (connectionPath.get(i) == connectionPath.get(i + 1)) {
+                    return null;
+                }
+            }
+
+
             return cr;
         } catch (Exception e) {
             return null;

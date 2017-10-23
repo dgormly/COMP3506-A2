@@ -42,7 +42,8 @@ public final class AutoTester implements TestAPI {
 
 		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
 		List<Long> list = new ArrayList<>();
-
+		System.out.println(recordsTree.size());
+		System.out.println(switchesMap.size());
 
 		if (tree == null) {
 			return list;
