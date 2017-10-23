@@ -1,10 +1,12 @@
 package au.edu.uq.itee.comp3506.assn2.tests;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import au.edu.uq.itee.comp3506.assn2.api.TestAPI;
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractBinaryTree;
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.*;
+import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractBinaryTree.*;
+
 
 import au.edu.uq.itee.comp3506.assn2.entities.CallRecord;
 import au.edu.uq.itee.comp3506.assn2.entities.FileReader;
@@ -14,37 +16,67 @@ import au.edu.uq.itee.comp3506.assn2.entities.FileReader;
  * The testing tool will instantiate an object of this class to test the functionality of your assignment.
  * You must implement the method and constructor stubs below so that they call the necessary code in your application.
  * 
- * @author 
+ * @author Daniel Gormly: 43503348
  */
 public final class AutoTester implements TestAPI {
 	// TODO Provide any data members required for the methods below to work correctly with your application.
 
 	/* Data sets. */
-	AbstractBinaryTree<LocalDateTime, CallRecord> recordsTree;
+	AvlTree<LocalDateTime, CallRecord> recordsTree;
 	AbstractMap<Integer, Integer> switchesMap;
-	FileReader fileReader = new FileReader(FileReader.SWITCHES_FILE, FileReader.RECORD_FILE);
+	TreeMultiMap<Long, LocalDateTime, CallRecord> diallerMultiMap;
+	TreeMultiMap<Long, LocalDateTime,CallRecord> receiverMultiMap;
+
+	FileReader fileReader = new FileReader(FileReader.SWITCHES_FILE, "call-records-short.txt");
 
 
 	public AutoTester()  {
-		// TODO Create and initialise any objects required by the methods below.
-//		records = new ArrayList<>();			// TODO this is to change data type.
-
 		/* Read in data from data sets. */
 		switchesMap = fileReader.getSwitchesMap();
 		recordsTree = fileReader.getAllCallRecords();
-		System.out.println(fileReader.getCrErrors());
+		diallerMultiMap = fileReader.getDialerRecords();
 	}
 	
 	@Override
 	public List<Long> called(long dialler) {
-		// TODO Auto-generated method stub
-		return null;
+
+		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
+		List<Long> list = new ArrayList<>();
+
+
+		if (tree == null) {
+			return list;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
+		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
+
+		while (firstNode != lastNode) {
+			list.add(firstNode.getElement().getReceiver());
+			firstNode = firstNode.getNext(firstNode);
+		}
+
+		list.add(tree.getLast().getElement().getReceiver());
+
+		return list;
 	}
+
 
 	@Override
 	public List<Long> called(long dialler, LocalDateTime startTime, LocalDateTime endTime) {
-		// TODO Auto-generated method stub
-		return null;
+		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
+		List<Long> list = new ArrayList<>();
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFrom(startTime);
+		Node<LocalDateTime, CallRecord> lastNode = tree.getTo(endTime);
+
+
+		while (firstNode != lastNode) {
+			list.add(firstNode.getElement().getReceiver());
+			firstNode = firstNode.getNext(firstNode);
+		}
+
+		return list;
 	}
 
 	@Override
@@ -109,14 +141,24 @@ public final class AutoTester implements TestAPI {
 
 	@Override
 	public List<CallRecord> callsMade(LocalDateTime startTime, LocalDateTime endTime) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 	
 	public static void main(String[] args) {
 		AutoTester test = new AutoTester();
-		
-		System.out.println("AutoTester Stub");
+		LocalDateTime start = LocalDateTime.parse("2017-09-07T03:04:55.529");
+		LocalDateTime end = LocalDateTime.parse("2017-09-16T16:40:29.461");
+		System.out.println("Single call.");
+		List<Long> receivers = test.called(Long.parseLong("5618941102"));
+
+
+		System.out.println("List size: " + receivers.size());
+		for (Long receiver : receivers) {
+			System.out.println(receiver);
+		}
+
+		//receivers = test.called(Long.parseLong("5618941102"), start, end);
 	}
 
 }

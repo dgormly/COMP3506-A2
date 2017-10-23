@@ -23,7 +23,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractBinaryTree<K, E> {
 
     private Node<K, E> root = null;
-    private ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();
+    protected ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();
 
     protected int size = 0;
 
@@ -137,17 +137,31 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     }
 
 
-    public void printInOrder(Node<K, E> node) {
-
-        if (node == null) {
-            return;
+    public Node<K, E> getFrom(K key) {
+        Node<K, E> firstNode = getRoot();
+        while (true) {
+            if (key.compareTo(firstNode.getKey()) < 0 && firstNode.getLeft() != null) {
+                firstNode = firstNode.getLeft();
+            } else if (key.compareTo(firstNode.getKey()) > 0 && firstNode.getRight() != null) {
+                firstNode = firstNode.getRight();
+            } else {
+                return firstNode;
+            }
         }
+    }
 
-        printInOrder(node.left);
 
-        System.out.println(node.getElement().toString());
-
-        printInOrder(node.right);
+    public Node<K, E> getTo(K key) {
+        Node<K, E> firstNode = getRoot();
+        while (true) {
+            if (key.compareTo(firstNode.getKey()) < 0 && firstNode.getLeft() != null) {
+                firstNode = firstNode.getLeft();
+            } else if (key.compareTo(firstNode.getKey()) > 0 && firstNode.getRight() != null) {
+                firstNode = firstNode.getRight();
+            } else {
+                return firstNode;
+            }
+        }
     }
 
 
@@ -156,7 +170,7 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
      *
      * @return
      */
-    public E getFirst() {
+    public Node<K, E> getFirst() {
         Node<K, E> current = getRoot();
         if (current == null) {
             return null;
@@ -165,19 +179,20 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
         while (current.left != null) {
             current = current.left;
         }
-        return current.element;
+        return current;
     }
 
-    public E getLast() {
+
+    public Node<K, E> getLast() {
         Node<K, E> current = getRoot();
         if (current == null) {
             return null;
         }
 
-        while (current.left != null) {
-            current = current.left;
+        while (current.right != null) {
+            current = current.right;
         }
-        return current.element;
+        return current;
     }
 
 }

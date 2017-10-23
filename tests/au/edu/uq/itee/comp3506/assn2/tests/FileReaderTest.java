@@ -39,12 +39,16 @@ public class FileReaderTest {
             for (int i = records.size() - 3; i < records.size(); i++) {
                 assertEquals("Expected a valid record", true, fr.isValidRecord(records.get(i)) != null);
             }
-
-
         } catch (IOException e) {
             System.out.println("Failed to load test file.");
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void allRecordsTest() {
+
+    }
+
 
 }

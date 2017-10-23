@@ -94,14 +94,14 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
 
         current = getRoot();
         while (!current.getKey().equals(key)) {
-            if (key.compareTo(current.getKey()) == -1) {
+            if (key.compareTo(current.getKey()) < 0) {
                 if (current.left != null) {
                     current = current.left;
                 } else {
                     current.left = new Node<>(current, key, element);
                     current = current.left;
                 }
-            } else if (key.compareTo(current.getKey()) == 1) {
+            } else if (key.compareTo(current.getKey()) > 0) {
                 if (current.right != null) {
                     current = current.right;
                 } else {
@@ -109,6 +109,7 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
                     current = current.right;
                 }
             } else {
+                map.put(current.key, current);
                 size++;
                 return getRoot();
             }
@@ -121,6 +122,7 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
             current = balanceTree(current);
         } while (current.parent != null);
 
+        map.put(current.key, current);
         size++;
         return current;
     }

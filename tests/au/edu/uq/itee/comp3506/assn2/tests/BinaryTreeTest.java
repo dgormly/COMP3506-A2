@@ -2,8 +2,13 @@ package au.edu.uq.itee.comp3506.assn2.tests;
 
 import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractBinaryTree.Node;
 import au.edu.uq.itee.comp3506.assn2.entities.ADTs.BinaryTree;
+import au.edu.uq.itee.comp3506.assn2.entities.CallRecord;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -64,7 +69,10 @@ public class BinaryTreeTest {
 
 
     @Test
-    public void treverseTree() {
+    public void traverseTree() {
+
+        List<String> list = new ArrayList<>();
+
         tree.add("B", "B");
         tree.add("A", "A");
         tree.add("D", "D");
@@ -74,21 +82,94 @@ public class BinaryTreeTest {
         tree.add("H", "H");
         tree.add("I", "I");
 
+        Node<String, String> firstNode = tree.get("B");
+        Node<String, String> lastNode = tree.get("G");
 
-        Node<String, String> node = tree.get("A");
+        while (firstNode != lastNode) {
+            list.add(firstNode.getElement());
+            firstNode = firstNode.getNext(firstNode);
+        }
 
-//        assertEquals("Wrong element found.",;
-        node = node.getNext(node);
-        System.out.println(node.getElement());
 
-        node = node.getNext(node);
-        System.out.println(node.getElement());
-        node = node.getNext(node);
-        System.out.println(node.getElement());
-        node = node.getNext(node);
-        System.out.println(node.getElement());
-        node = node.getNext(node);
-        System.out.println(node.getElement());
+        for (String s : list) {
+            System.out.println(s);
+        }
 
     }
+
+    @Test
+    public void traverseTree2() {
+
+        List<String> list = new ArrayList<>();
+
+        tree.add("B", "B");
+        tree.add("A", "A");
+        tree.add("D", "D");
+        tree.add("F","F");
+        tree.add("G", "G");
+        tree.add("E", "E");
+        tree.add("H", "H");
+        tree.add("I", "I");
+
+        String key1 = "A";
+        String key2 = "E";
+
+        Node<String, String> firstNode = tree.getRoot();
+        Node<String, String> lastNode = tree.getRoot();
+
+        while (true) {
+            if (key1.compareTo(firstNode.getKey()) < 0 && firstNode.getLeft() != null) {
+                firstNode = firstNode.getLeft();
+            } else if (key1.compareTo(firstNode.getKey()) > 0 && firstNode.getRight() != null) {
+                firstNode.getRight();
+            } else {
+                break;
+            }
+        }
+
+        while (true) {
+            if (key2.compareTo(lastNode.getKey()) < 0 && lastNode.getLeft() != null) {
+                lastNode = lastNode.getLeft();
+            } else if (key2.compareTo(lastNode.getKey()) > 0 && lastNode.getRight() != null) {
+                lastNode = lastNode.getRight();
+            } else {
+                break;
+            }
+        }
+
+        while (firstNode != lastNode) {
+            list.add(firstNode.getElement());
+            firstNode = firstNode.getNext(firstNode);
+        }
+        list.add(lastNode.getElement());
+
+
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
+
+
+    @Test
+    public void getFirstTest() {
+
+        tree.add("B", "B");
+        tree.add("A", "A");
+        tree.add("D", "D");
+        tree.add("F","F");
+        tree.add("G", "G");
+        tree.add("E", "E");
+        tree.add("H", "H");
+        tree.add("I", "I");
+
+
+
+        assertEquals("Incorrect first Item found", "A", tree.getFirst().getElement());
+        assertEquals("Incorrect last Item found", "I", tree.getLast().getElement());
+
+
+    }
+
+
+
 }

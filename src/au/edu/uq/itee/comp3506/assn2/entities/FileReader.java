@@ -19,8 +19,8 @@ public class FileReader {
     public final static String RECORD_FILE = "call-records.txt";
     public final static String SWITCHES_FILE = "switches.txt";
 
-    private AbstractBinaryTree<LocalDateTime, CallRecord> recordsTree = new AvlTree<>();
-    private AbstractBinaryTree<LocalDateTime, CallRecord> invalidRecords = new AvlTree<>();
+    private AvlTree<LocalDateTime, CallRecord> recordsTree = new AvlTree<>();
+    private AvlTree<LocalDateTime, CallRecord> invalidRecords = new AvlTree<>();
 
     private TreeMultiMap<Long, LocalDateTime, CallRecord> dialerRecords = new TreeMultiMap<>();
     private TreeMultiMap<Long, LocalDateTime, CallRecord> receiverRecords = new TreeMultiMap<>();
@@ -36,12 +36,14 @@ public class FileReader {
     public FileReader(String switchesPath, String recordsPath) {
         importSwitches(switchesPath);
         importRecords(recordsPath);
+        System.out.println("DONE");
     }
 
 
     public FileReader() {
 
     }
+
 
     public int getCrErrors() {
         return crErrors;
@@ -106,7 +108,6 @@ public class FileReader {
             int receiverSwitch = Integer.parseInt(variables[variables.length - 3]);
             LocalDateTime stamp = LocalDateTime.parse(variables[variables.length - 1]);
             List<Integer> path = new ArrayList<>();
-            boolean corrupt = false;
             int length = variables.length;
 
             // Corrupt
@@ -118,7 +119,7 @@ public class FileReader {
                 return null;
             }
 
-            if (variables.length < 7) {
+            if (variables.length < 6) {
                 return null;
             }
 
@@ -193,7 +194,17 @@ public class FileReader {
     }
 
 
-    public AbstractBinaryTree<LocalDateTime, CallRecord> getAllCallRecords() {
+    public TreeMultiMap<Long, LocalDateTime, CallRecord> getDialerRecords() {
+        return dialerRecords;
+    }
+
+
+    public TreeMultiMap<Long, LocalDateTime, CallRecord> getReceiverRecords() {
+        return receiverRecords;
+    }
+
+
+    public AvlTree<LocalDateTime, CallRecord> getAllCallRecords() {
         return recordsTree;
     }
 
