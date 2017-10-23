@@ -26,6 +26,7 @@ public final class AutoTester implements TestAPI {
 	AbstractMap<Integer, Integer> switchesMap;
 	TreeMultiMap<Long, LocalDateTime, CallRecord> diallerMultiMap;
 	TreeMultiMap<Long, LocalDateTime,CallRecord> receiverMultiMap;
+	AvlTree<Integer, Integer> connectionTree;
 
 	FileReader fileReader = new FileReader(FileReader.SWITCHES_FILE, "call-records-short.txt");
 
@@ -35,6 +36,7 @@ public final class AutoTester implements TestAPI {
 		switchesMap = fileReader.getSwitchesMap();
 		recordsTree = fileReader.getAllCallRecords();
 		diallerMultiMap = fileReader.getDialerRecords();
+		receiverMultiMap = fileReader.getReceiverRecords();
 	}
 	
 	@Override
@@ -51,9 +53,9 @@ public final class AutoTester implements TestAPI {
 
 		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
 
-		list.add(linkedList.getFirst().getDialler());
+		list.add(linkedList.getFirst().getReceiver());
 		while (linkedList.hasNext()) {
-			list.add(linkedList.getNext().getDialler());
+			list.add(linkedList.getNext().getReceiver());
 		}
 
 		return list;
@@ -73,9 +75,9 @@ public final class AutoTester implements TestAPI {
 		if (linkedList.length == 0) {
 			return list;
 		}
-		list.add(linkedList.getFirst().getDialler());
+		list.add(linkedList.getFirst().getReceiver());
 		while (linkedList.hasNext()) {
-			list.add(linkedList.getNext().getDialler());
+			list.add(linkedList.getNext().getReceiver());
 		}
 
 
@@ -125,17 +127,36 @@ public final class AutoTester implements TestAPI {
 		if (linkedList.length == 0) {
 			return list;
 		}
-		list.add(linkedList.getFirst().getDialler());
+		list.add(linkedList.getFirst().getReceiver());
 		while (linkedList.hasNext()) {
-			list.add(linkedList.getNext().getDialler());
+			list.add(linkedList.getNext().getReceiver());
 		}
 		return list;
 	}
 
 	@Override
 	public List<Integer> findConnectionFault(long dialler) {
-		// TODO Auto-generated method stub
-		return null;
+		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
+		List<Integer> list = new ArrayList<>();
+
+
+		if (tree == null) {
+			return list;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
+		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
+
+//		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+
+//		list.add(linkedList.getFirst().getReceiver());
+//		while (linkedList.hasNext()) {
+//			if (linkedList.getElement().getFault() != null) {
+//
+//			}
+//		}
+
+		return list;
 	}
 
 	@Override
@@ -158,7 +179,7 @@ public final class AutoTester implements TestAPI {
 
 	@Override
 	public int maxConnections() {
-		// TODO Auto-generated method stub
+
 		return 0;
 	}
 
@@ -186,13 +207,17 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> fromNode = recordsTree.getFrom(startTime);
 		Node<LocalDateTime, CallRecord> toNode = recordsTree.getTo(endTime);
 
+
 		List<CallRecord> list = new ArrayList<>();
 
+
 		SinglyLinkedList<CallRecord> linkedList = recordsTree.getList(fromNode.getKey(), toNode.getKey());
+
 
 		if (linkedList.length == 0) {
 			return list;
 		}
+
 
 		list.add(linkedList.getFirst());
 		while (linkedList.hasNext()) {

@@ -61,7 +61,8 @@ public class CallRecord {
 	public LocalDateTime getTimeStamp() {
 		return timeStamp;
 	}
-	
+
+
 	/**
 	 * 
 	 * @param switchID The identifier of a switch.
@@ -70,6 +71,7 @@ public class CallRecord {
 	public boolean hasSwitch(int switchID) {
 		return connectionPath.indexOf(switchID) != -1;
 	}
+
 
 	/**
 	 * Simple string representation of the call record.
@@ -81,4 +83,26 @@ public class CallRecord {
 				+ ", receiverSwitch=" + receiverSwitch + ", connectionPath=" + connectionPath + ", timeStamp="
 				+ timeStamp + "]";
 	}
+
+
+	public int getFault() {
+		if (connectionPath.size() == 0) {
+			//return diallerSwitch;
+			return diallerSwitch;
+		}
+
+		if (connectionPath.get(0) != getDiallerSwitch()) {
+                //System.out.println("2");
+			return diallerSwitch;
+		}
+
+
+		if (connectionPath.get(connectionPath.size() - 1) != getReceiverSwitch()) {
+                //System.out.println("3");
+			return receiverSwitch;
+		}
+		return 0;
+
+	}
+
 }

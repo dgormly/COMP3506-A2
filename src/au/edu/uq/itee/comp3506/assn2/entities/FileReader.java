@@ -19,7 +19,7 @@ public class FileReader {
     public final static String SWITCHES_FILE = "switches.txt";
 
     private AvlTree<LocalDateTime, CallRecord> recordsTree = new AvlTree<>();
-    private AvlTree<LocalDateTime, CallRecord> invalidRecords = new AvlTree<>();
+    private AvlTree<Integer, Integer> connectionTree = new AvlTree<>();
 
     private TreeMultiMap<Long, LocalDateTime, CallRecord> dialerRecords = new TreeMultiMap<>();
     private TreeMultiMap<Long, LocalDateTime, CallRecord> receiverRecords = new TreeMultiMap<>();
@@ -35,6 +35,7 @@ public class FileReader {
     public FileReader(String switchesPath, String recordsPath) {
         importSwitches(switchesPath);
         importRecords(recordsPath);
+
         System.out.println("DONE");
     }
 
@@ -125,28 +126,21 @@ public class FileReader {
             CallRecord cr = new CallRecord(dialer, receiver, diallerSwitch, receiverSwitch, path, stamp);
 
             for (int i: cr.getConnectionPath()) {
-                //System.out.println(i);
+                if (switchesMap.contains(i)) {
+                    int count = switchesMap.get(i) + 1;
+                    switchesMap.put(i, count);
+                }
             }
 
             List<Integer> connectionPath = cr.getConnectionPath();
             int size = connectionPath.size();
 
-            if (size < 1) {
+            if (size == 1) {
                 // Fault
                 //System.out.println("1");
                 return cr;
             }
 
-            if (connectionPath.get(0) != cr.getDiallerSwitch()) {
-                //System.out.println("2");
-                return null;
-            }
-
-
-            if (connectionPath.get(size - 1) != cr.getReceiverSwitch()) {
-                //System.out.println("3");
-                return null;
-            }
 
             for (int i = 0; i < size - 1; i++) {
                 if (connectionPath.get(i).equals(connectionPath.get(i + 1))) {
@@ -189,7 +183,7 @@ public class FileReader {
             int mapSize = (int) Math.floor(Integer.parseInt(line) * 1.25);
             switchesMap = new ProbeHashMap<>(mapSize);
             while ((line = br.readLine()) != null) {
-                switchesMap.put(Integer.parseInt(line), Integer.parseInt(line));
+                switchesMap.put(Integer.parseInt(line), 0);
             }
             br.close();
             fr.close();

@@ -136,6 +136,11 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      */
     @Override
     public V put(K key, V value) {
+        if (findKey(key) != -1) {
+            int pos = findKey(key);
+            map[pos].setV(value);
+        }
+
         if (numEntries > map.length * 0.75) {
             resize();
         }
