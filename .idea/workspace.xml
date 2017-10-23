@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19704f59-8f57-41f3-aacf-f8367bc9b451" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.class" afterPath="$PROJECT_DIR$/out/production/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.class" afterPath="$PROJECT_DIR$/out/test/COMP3506-A2/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" afterPath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" afterPath="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,25 +59,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AutoTester.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AutoTester.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="303">
-                  <caret line="285" column="0" lean-forward="true" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+                <state relative-caret-position="271">
+                  <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#7589#7590#0" expanded="true" />
-                    <element signature="e#7630#7631#0" expanded="true" />
+                    <element signature="e#7587#7588#0" expanded="true" />
+                    <element signature="e#7628#7629#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AvlTree.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="AvlTree.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="239" column="0" lean-forward="true" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+                <state relative-caret-position="665">
+                  <caret line="228" column="27" lean-forward="true" selection-start-line="228" selection-start-column="27" selection-end-line="228" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -122,7 +119,7 @@
           <file leaf-file-name="BinaryTree.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1937">
+                <state relative-caret-position="1784">
                   <caret line="163" column="9" lean-forward="true" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
                   <folding />
                 </state>
@@ -207,8 +204,8 @@
           <file leaf-file-name="TestShort.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/TestShort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="226">
-                  <caret line="233" column="16" lean-forward="false" selection-start-line="233" selection-start-column="16" selection-end-line="233" selection-end-column="16" />
+                <state relative-caret-position="425">
+                  <caret line="243" column="28" lean-forward="true" selection-start-line="243" selection-start-column="28" selection-end-line="243" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -337,8 +334,8 @@
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/SinglyLinkedList.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java" />
-        <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" />
         <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" />
+        <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" />
       </list>
     </option>
   </component>
@@ -504,6 +501,31 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="TestShort.SingleCallRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="au.edu.uq.itee.comp3506.assn2.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="COMP3506-A2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="au.edu.uq.itee.comp3506.assn2.tests" />
+      <option name="MAIN_CLASS_NAME" value="au.edu.uq.itee.comp3506.assn2.tests.TestShort" />
+      <option name="METHOD_NAME" value="SingleCallRecord" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="TestShort.callsMadeToReceierInSubsetOfRecords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -517,31 +539,6 @@
       <option name="PACKAGE_NAME" value="au.edu.uq.itee.comp3506.assn2.tests" />
       <option name="MAIN_CLASS_NAME" value="au.edu.uq.itee.comp3506.assn2.tests.TestShort" />
       <option name="METHOD_NAME" value="callsMadeToReceierInSubsetOfRecords" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="TestShort.findReceiverFaultInSubsetOfRecords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="au.edu.uq.itee.comp3506.assn2.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="COMP3506-A2" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="au.edu.uq.itee.comp3506.assn2.tests" />
-      <option name="MAIN_CLASS_NAME" value="au.edu.uq.itee.comp3506.assn2.tests.TestShort" />
-      <option name="METHOD_NAME" value="findReceiverFaultInSubsetOfRecords" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -661,18 +658,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TestShort" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestShort.findReceiverFaultInSubsetOfRecords" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestShort.callsMadeToReceierInSubsetOfRecords" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestShort.leastConnectedInSubsetOfRecords" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestShort.NumberAfterRecords" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestShort.callsMadeToReceierInSubsetOfRecords" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestShort.leastConnectedInSubsetOfRecords" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestShort.NumberAfterRecords" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestShort.SingleCallRecord" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.TestShort" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestShort.NumberAfterRecords" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestShort.leastConnectedInSubsetOfRecords" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestShort.callsMadeToReceierInSubsetOfRecords" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestShort.findReceiverFaultInSubsetOfRecords" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestShort.SingleCallRecord" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestShort.NumberAfterRecords" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestShort.leastConnectedInSubsetOfRecords" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestShort.callsMadeToReceierInSubsetOfRecords" />
       </list>
     </recent_temporary>
   </component>
@@ -715,18 +712,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestShort - 2017.10.23 at 21h 48m 21s.xml">
-      <configuration name="TestShort" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort - 2017.10.23 at 21h 48m 57s.xml">
-      <configuration name="TestShort" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort - 2017.10.23 at 21h 51m 09s.xml">
-      <configuration name="TestShort" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort - 2017.10.23 at 21h 51m 25s.xml">
-      <configuration name="TestShort" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestShort - 2017.10.23 at 21h 51m 43s.xml">
       <configuration name="TestShort" configurationId="JUnit" />
     </history-entry>
@@ -736,14 +721,26 @@
     <history-entry file="TestShort - 2017.10.23 at 21h 58m 43s.xml">
       <configuration name="TestShort" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestShort_NumberAfterRecords - 2017.10.23 at 21h 47m 09s.xml">
-      <configuration name="TestShort.NumberAfterRecords" configurationId="JUnit" />
+    <history-entry file="TestShort - 2017.10.23 at 22h 01m 57s.xml">
+      <configuration name="TestShort" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestShort_NumberAfterRecords - 2017.10.23 at 21h 47m 17s.xml">
-      <configuration name="TestShort.NumberAfterRecords" configurationId="JUnit" />
+    <history-entry file="TestShort - 2017.10.23 at 22h 05m 05s.xml">
+      <configuration name="TestShort" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestShort_NumberAfterRecords - 2017.10.23 at 21h 47m 46s.xml">
-      <configuration name="TestShort.NumberAfterRecords" configurationId="JUnit" />
+    <history-entry file="TestShort - 2017.10.23 at 22h 09m 01s.xml">
+      <configuration name="TestShort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestShort_SingleCallRecord - 2017.10.23 at 22h 05m 19s.xml">
+      <configuration name="TestShort.SingleCallRecord" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestShort_SingleCallRecord - 2017.10.23 at 22h 06m 08s.xml">
+      <configuration name="TestShort.SingleCallRecord" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestShort_SingleCallRecord - 2017.10.23 at 22h 08m 41s.xml">
+      <configuration name="TestShort.SingleCallRecord" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestShort_SingleCallRecord - 2017.10.23 at 22h 08m 47s.xml">
+      <configuration name="TestShort.SingleCallRecord" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -758,7 +755,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36695653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36695653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864583" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -874,8 +871,14 @@
           <properties />
           <option name="timeStamp" value="142" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="143" />
+      <option name="time" value="145" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1266,39 +1269,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java">
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1937">
-          <caret line="163" column="9" lean-forward="true" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="271">
+          <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7587#7588#0" expanded="true" />
+            <element signature="e#7628#7629#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/TestShort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="233" column="16" lean-forward="false" selection-start-line="233" selection-start-column="16" selection-end-line="233" selection-end-column="16" />
+        <state relative-caret-position="425">
+          <caret line="243" column="28" lean-forward="true" selection-start-line="243" selection-start-column="28" selection-end-line="243" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1784">
+          <caret line="163" column="9" lean-forward="true" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="239" column="0" lean-forward="true" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+        <state relative-caret-position="665">
+          <caret line="228" column="27" lean-forward="true" selection-start-line="228" selection-start-column="27" selection-end-line="228" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="285" column="0" lean-forward="true" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7589#7590#0" expanded="true" />
-            <element signature="e#7630#7631#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
