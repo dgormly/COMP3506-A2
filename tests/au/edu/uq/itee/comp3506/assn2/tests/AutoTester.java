@@ -49,12 +49,12 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
 		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
 
-		while (firstNode != lastNode) {
-			list.add(firstNode.getElement().getReceiver());
-			firstNode = firstNode.getNext(firstNode);
-		}
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
 
-		list.add(tree.getLast().getElement().getReceiver());
+		list.add(linkedList.getFirst().getDialler());
+		while (linkedList.hasNext()) {
+			list.add(linkedList.getNext().getDialler());
+		}
 
 		return list;
 	}
@@ -68,9 +68,14 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> fromNode = tree.getFrom(startTime);
 		Node<LocalDateTime, CallRecord> toNode = tree.getTo(endTime);
 
-		while (fromNode.getKey().compareTo(endTime) <= 0 && fromNode != recordsTree.getLast()) {
-			list.add(fromNode.getElement().getReceiver());
-			fromNode = fromNode.getNext(fromNode);
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(fromNode.getKey(), toNode.getKey());
+
+		if (linkedList.length == 0) {
+			return list;
+		}
+		list.add(linkedList.getFirst().getDialler());
+		while (linkedList.hasNext()) {
+			list.add(linkedList.getNext().getDialler());
 		}
 
 
@@ -79,14 +84,52 @@ public final class AutoTester implements TestAPI {
 
 	@Override
 	public List<Long> callers(long receiver) {
-		// TODO Auto-generated method stub
-		return null;
+		AvlTree<LocalDateTime, CallRecord> tree = receiverMultiMap.getTree(receiver);
+		List<Long> list = new ArrayList<>();
+
+		if (tree == null) {
+			return list;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
+		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+
+
+		if (linkedList.length == 0) {
+			return list;
+		}
+		list.add(linkedList.getFirst().getDialler());
+		while (linkedList.hasNext()) {
+			list.add(linkedList.getNext().getDialler());
+		}
+
+		return list;
 	}
 
 	@Override
 	public List<Long> callers(long receiver, LocalDateTime startTime, LocalDateTime endTime) {
-		// TODO Auto-generated method stub
-		return null;
+		AvlTree<LocalDateTime, CallRecord> tree = receiverMultiMap.getTree(receiver);
+		List<Long> list = new ArrayList<>();
+
+		if (tree == null) {
+			return list;
+		}
+
+		Node<LocalDateTime, CallRecord> fromNode = tree.getFrom(startTime);
+		Node<LocalDateTime, CallRecord> toNode = tree.getTo(endTime);
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(fromNode.getKey(), toNode.getKey());
+
+		if (linkedList.length == 0) {
+			return list;
+		}
+		list.add(linkedList.getFirst().getDialler());
+		while (linkedList.hasNext()) {
+			list.add(linkedList.getNext().getDialler());
+		}
+		return list;
 	}
 
 	@Override
@@ -145,9 +188,15 @@ public final class AutoTester implements TestAPI {
 
 		List<CallRecord> list = new ArrayList<>();
 
-		while (fromNode.getKey().compareTo(endTime) <= 0 && fromNode != recordsTree.getLast()) {
-			list.add(fromNode.getElement());
-			fromNode = fromNode.getNext(fromNode);
+		SinglyLinkedList<CallRecord> linkedList = recordsTree.getList(fromNode.getKey(), toNode.getKey());
+
+		if (linkedList.length == 0) {
+			return list;
+		}
+
+		list.add(linkedList.getFirst());
+		while (linkedList.hasNext()) {
+			list.add(linkedList.getNext());
 		}
 
 		return list;

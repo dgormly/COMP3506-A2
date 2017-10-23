@@ -1,6 +1,8 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
+import au.edu.uq.itee.comp3506.assn2.entities.CallRecord;
+
 /**
  * A balanced implementation of a Binary tree allowing for a more consistant O(Logn)
  * insert and removal time.
@@ -14,6 +16,8 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  */
 public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E> implements AbstractBinaryTree<K, E> {
 
+
+    private SinglyLinkedList<E> list = new SinglyLinkedList<>();
 
     /**
      * Returns the distance to the root node of the tree of a given node.
@@ -225,4 +229,23 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
         return node.height;
     }
 
+    private void inOrderTraverse(Node<K, E> root,K start,K finish) {
+
+        if (root != null) {
+            inOrderTraverse(root.left, start, finish);
+
+            if (start.compareTo(root.getKey()) < 0 && root.getKey().compareTo(finish) <= 0) {
+                list.addToEnd(root.getElement());
+            }
+
+            inOrderTraverse(root.right, start, finish);
+        }
+    }
+
+
+    public SinglyLinkedList<E> getList(K start, K finish) {
+        list = new SinglyLinkedList<>();
+        inOrderTraverse(root, start, finish);
+        return list;
+    }
 }

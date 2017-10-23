@@ -68,34 +68,6 @@ public class BinaryTreeTest {
     }
 
 
-    @Test
-    public void traverseTree() {
-
-        List<String> list = new ArrayList<>();
-
-        tree.add("B", "B");
-        tree.add("A", "A");
-        tree.add("D", "D");
-        tree.add("E", "E");
-        tree.add("F","F");
-        tree.add("G", "G");
-        tree.add("H", "H");
-        tree.add("I", "I");
-
-        Node<String, String> firstNode = tree.get("B");
-        Node<String, String> lastNode = tree.get("G");
-
-        while (firstNode != lastNode) {
-            list.add(firstNode.getElement());
-            firstNode = firstNode.getNext(firstNode);
-        }
-
-
-        for (String s : list) {
-            System.out.println(s);
-        }
-
-    }
 
     @Test
     public void traverseTree2() {
@@ -138,9 +110,10 @@ public class BinaryTreeTest {
         }
 
         while (firstNode != lastNode) {
-            list.add(firstNode.getElement());
-            firstNode = firstNode.getNext(firstNode);
+            //list.add(firstNode.getElement());
+            //firstNode = firstNode.getNext(firstNode);
         }
+
         list.add(lastNode.getElement());
 
 

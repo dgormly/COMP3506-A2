@@ -28,7 +28,7 @@ public class SinglyLinkedList<T> implements AbstractLinkedList<T> {
     @Override
     public T getFirst() {
         cursor = first;
-        return first.getElement();
+        return first == null ? null : first.getElement();
     }
 
     @Override
@@ -42,7 +42,6 @@ public class SinglyLinkedList<T> implements AbstractLinkedList<T> {
     public boolean isLast() {
         return cursor == last;
     }
-
     @Override
     public boolean isEmpty() {
         return length == 0;

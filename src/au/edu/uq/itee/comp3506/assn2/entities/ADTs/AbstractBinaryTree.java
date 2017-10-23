@@ -99,47 +99,5 @@ public interface AbstractBinaryTree<K extends Comparable<? super K>, E> {
         public void setHeight(int height) {
             this.height = height;
         }
-
-        private Node<K, E> next = null;
-
-        public Node<K, E> getNext(Node<K, E> node) {
-            if (node.right != null) {
-                node = node.right;
-            } else {
-                /* find next valid parent. */
-                return node.parent;
-
-            }
-
-            /* Do recursion. */
-            while (next == null) {
-                recurseInOrder(node);
-                if (next == null) {
-                    node = node.parent;
-                }
-            }
-            return next;
-        }
-
-
-        private void recurseInOrder(Node<K, E> node) {
-            if (node == null) {
-                return;
-            }
-
-            recurseInOrder(node.left);
-
-            if (next == null) {
-                next = node;
-                return;
-            }
-
-            if (next != null) {
-                return;
-            }
-
-            recurseInOrder(node.right);
-        }
-
     }
 }

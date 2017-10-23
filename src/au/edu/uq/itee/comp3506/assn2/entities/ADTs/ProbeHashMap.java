@@ -31,7 +31,6 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     private int arraySize = 1000; // Initial size of the array map to initialize.
     private int numEntries = 0; // Number of key-value pairs.
 
-    private final MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null); // Sentinel Entry.
     private MapEntry<K, V>[] map; // Map to store data.
 
 
