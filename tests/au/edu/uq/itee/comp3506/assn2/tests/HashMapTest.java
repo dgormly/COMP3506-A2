@@ -49,18 +49,6 @@ public class HashMapTest {
 
 
     @Test
-    public void removeValue() {
-        map.put("Hello", 0);
-        map.put("World", 1);
-        assertEquals("Incorrect value found.", 1, (int) map.remove("World"));
-        assertEquals("Incorrect map size.", 1, map.size());
-        assertEquals("No entity should be found.", null, map.remove("World"));
-        assertEquals("Incorrect value found", 0, (int) map.remove("Hello"));
-        assertEquals("Incorrect map size.", 0, map.size());
-    }
-
-
-    @Test
     public void isEmptyTest() {
         assertEquals("Map should be empty.", true, map.isEmpty());
         map.put("Hello", 0);

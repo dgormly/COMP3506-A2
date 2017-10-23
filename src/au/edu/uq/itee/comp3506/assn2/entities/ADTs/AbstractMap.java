@@ -57,18 +57,6 @@ public interface AbstractMap<K, V> {
 
 
     /**
-     * Removes a key-value pair from the map.
-     *
-     * @param key
-     *      Key to search for.
-     * @return
-     *      Value removed from the map associated with given key.
-     *      Null otherwise.
-     */
-    V remove(K key);
-
-
-    /**
      * Nested class: Key-Value pair.
      *
      * @param <K>

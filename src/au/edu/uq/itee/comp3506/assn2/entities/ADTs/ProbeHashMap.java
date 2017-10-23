@@ -141,12 +141,6 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
             resize();
         }
         int pos = findAvailablePosition(key);
-        if (pos == -1 && map[-pos] != DEFUNCT) {
-            return null;
-        }
-        if (pos < 0) {
-            pos = -pos;
-        }
         if (map[pos] == null) {
             MapEntry<K, V> entry = new MapEntry<>(key, value);
             map[pos] = entry;
@@ -161,34 +155,6 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     }
 
 
-    /**
-     * Removes a key-value pair from the map.
-     *
-     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
-     *
-     * @param key
-     *      Key to search for.
-     * @return
-     *      Value removed from the map associated with given key.
-     *      Null otherwise.
-     */
-    @Override
-    public V remove(K key) {
-        int pos = findAvailablePosition(key);
-
-        if (pos < 0) {
-            return null;
-        }
-
-        if (map[pos].getK().equals(key)) {
-            V val = map[pos].getV();
-            map[pos] = DEFUNCT;
-            numEntries--;
-            return val;
-        }
-        return null;
-    }
-
 
     /**
      * Checks if a spot is available.
@@ -201,7 +167,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      *      True of a sentinal is in place or value is null.
      */
     private boolean isAvailable(int pos) {
-        return map[pos] == DEFUNCT || map[pos] == null;
+        return map[pos] == null;
     }
 
 
@@ -259,7 +225,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
 
         for (int i = 0; i < map.length; i++) {
             int pos = Math.abs((home + i) % map.length);
-            if (map[pos] != null && map[pos] != DEFUNCT && map[pos].getK().equals(key)) {
+            if (map[pos] != null && map[pos].getK().equals(key)) {
                 return pos;
             }
         }

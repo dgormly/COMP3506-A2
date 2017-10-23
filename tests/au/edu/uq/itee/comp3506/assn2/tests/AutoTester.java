@@ -151,15 +151,15 @@ public final class AutoTester implements TestAPI {
 		LocalDateTime start = LocalDateTime.parse("2017-09-07T03:04:55.529");
 		LocalDateTime end = LocalDateTime.parse("2017-09-16T16:40:29.461");
 
-		System.out.println(test.recordsTree.size());
+		//System.out.println(test.recordsTree.size());
 
 		List<Long> receivers = test.called(Long.parseLong("5618941102"));
 
 
 		System.out.println("List size: " + receivers.size());
-		for (Long receiver : receivers) {
-			System.out.println(receiver);
-		}
+		//for (Long receiver : receivers) {
+		//	System.out.println(receiver);
+		//}
 
 		//receivers = test.called(Long.parseLong("5618941102"), start, end);
 	}

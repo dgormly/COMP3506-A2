@@ -68,7 +68,7 @@ public class FileReader {
 
                 if (cr != null) {
                     recordsTree.add(cr.getTimeStamp(), cr);
-                    dialerRecords.put(cr.getReceiver(), cr.getTimeStamp(), cr);
+                    dialerRecords.put(cr.getDialler(), cr.getTimeStamp(), cr);
                     receiverRecords.put(cr.getReceiver(), cr.getTimeStamp(), cr);
                 } else {
                     crErrors++;
@@ -125,31 +125,32 @@ public class FileReader {
             CallRecord cr = new CallRecord(dialer, receiver, diallerSwitch, receiverSwitch, path, stamp);
 
             for (int i: cr.getConnectionPath()) {
-                System.out.println(i);
+                //System.out.println(i);
             }
 
             List<Integer> connectionPath = cr.getConnectionPath();
             int size = connectionPath.size();
 
-            if (size < 2) {
-                System.out.println("1");
-                return null;
+            if (size < 1) {
+                // Fault
+                //System.out.println("1");
+                return cr;
             }
 
             if (connectionPath.get(0) != cr.getDiallerSwitch()) {
-                System.out.println("2");
+                //System.out.println("2");
                 return null;
             }
 
 
             if (connectionPath.get(size - 1) != cr.getReceiverSwitch()) {
-                System.out.println("3");
+                //System.out.println("3");
                 return null;
             }
 
             for (int i = 0; i < size - 1; i++) {
                 if (connectionPath.get(i).equals(connectionPath.get(i + 1))) {
-                    System.out.println("4");
+                    //System.out.println("4");
                     return null;
                 }
             }
@@ -158,7 +159,7 @@ public class FileReader {
             return cr;
 
         } catch (Exception e) {
-            System.err.println("Error found: ");
+            //System.err.println("Error found: ");
             e.printStackTrace();
             return null;
         }

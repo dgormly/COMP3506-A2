@@ -32,7 +32,6 @@ public class TreeMultiMap<K extends Comparable<? super K>,S extends Comparable<?
         return map.get(key);
     }
 
-
     public V get(K key, S key2) {
         return map.get(key).get(key2).getElement();
     }
