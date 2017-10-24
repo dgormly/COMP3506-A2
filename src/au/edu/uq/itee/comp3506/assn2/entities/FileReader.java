@@ -9,6 +9,14 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
 
+
+/**
+ * File class responsible for reading and validating switches in
+ * call records and switches.
+ *
+ * Memory efficiency: O(r + s), where s is the number of switches and
+ *                              r is the number of records.
+ */
 public class FileReader {
 
     public final static String RECORD_FILE = "call-records.txt";
@@ -26,6 +34,8 @@ public class FileReader {
 
     /**
      * Constructor:
+     *
+     * Runtime efficiency:
      *
      * Reads files in and build data structures.
      */
@@ -46,7 +56,7 @@ public class FileReader {
     /**
      * Reads in all records and converts them to a CallRecord Object.
      *
-     * Runtime: O(n)
+     * Runtime: O(r)
      *
      * @return List of Call Records.
      */
@@ -84,7 +94,7 @@ public class FileReader {
      * Checks if the record is valid.
      * If it is faulty the record is added to a faulty tree.
      *
-     * Runtime Efficiency:
+     * Runtime Efficiency: O(r + s)
      *
      * @param line
      *      Record to parse.
@@ -159,7 +169,7 @@ public class FileReader {
     /**
      * Reads in the switches.txt file.
      *
-     * Runtime: O(n)
+     * Runtime: O(s)
      *
      * @return List of switch identifiers.
      */

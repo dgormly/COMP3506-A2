@@ -9,7 +9,7 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
  *
  * Created for COMP3506 Assignment 2 at the University Of Queensland.
  *
- * Memory Efficienty:
+ * Memory Efficiency: O(n), where n represents the number of nodes created.
  *
  * @author Daniel Gormly, Student Number: 43503348
  *
@@ -24,7 +24,6 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     protected ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();
 
     protected int size = 0;
-
 
     protected Node<K, E> setRoot(K key, E element) {
         if (size() > 0) {
@@ -41,7 +40,7 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     /**
      * Checks if the tree contains a given key.
      *
-     * Runtime efficieny: O(1)
+     * Runtime efficiency: O(1)
      *
      * @param key
      *      Key to check for.
@@ -288,5 +287,4 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
         }
         return current;
     }
-
 }
