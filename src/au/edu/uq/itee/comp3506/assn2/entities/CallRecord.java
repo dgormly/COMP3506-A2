@@ -85,6 +85,14 @@ public class CallRecord {
 	}
 
 
+	/**
+	 * Checks if the connection path is faulty.
+	 *
+	 * Runtime efficiency: O(1)
+	 *
+	 * @return
+	 * 		Switch that fault is found on.
+	 */
 	public int getFault() {
 		if (connectionPath.size() == 0) {
 			//return diallerSwitch;

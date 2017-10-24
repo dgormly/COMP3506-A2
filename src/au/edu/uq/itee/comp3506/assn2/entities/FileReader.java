@@ -15,7 +15,6 @@ public class FileReader {
     public final static String SWITCHES_FILE = "switches.txt";
 
     private AvlTree<LocalDateTime, CallRecord> recordsTree = new AvlTree<>();
-    private AvlTree<Integer, Integer> connectionTree = new AvlTree<>();
 
     private TreeMultiMap<Long, LocalDateTime, CallRecord> dialerRecords = new TreeMultiMap<>();
     private TreeMultiMap<Long, LocalDateTime, CallRecord> receiverRecords = new TreeMultiMap<>();

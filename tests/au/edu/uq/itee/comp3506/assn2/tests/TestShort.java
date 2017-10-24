@@ -191,7 +191,6 @@ public class TestShort {
     }
 
     /* TEST 5 QUERIES */
-
     @Test
     public void leastConnectedInAllRecords() {
         Assert.assertEquals(26128, tester.minConnections());
@@ -224,7 +223,6 @@ public class TestShort {
     }
 
     /* TEST 6 QUERIES */
-
     @Test
     public void TotalNumberOfRecords() {
         Assert.assertEquals(6498, tester.callsMade(LocalDateTime.MIN, LocalDateTime.MAX).size());

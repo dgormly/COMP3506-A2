@@ -1,6 +1,5 @@
 package au.edu.uq.itee.comp3506.assn2.tests;
 
-import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
 import au.edu.uq.itee.comp3506.assn2.entities.FileReader;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,11 +1,12 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
-import au.edu.uq.itee.comp3506.assn2.entities.CallRecord;
 
 /**
  * A balanced implementation of a Binary tree allowing for a more consistant O(Logn)
  * insert and removal time.
+ *
+ *
  *
  * Created for COMP3506 Assignment 2 at the University Of Queensland.
  *
@@ -172,7 +173,6 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
     }
 
 
-
     /**
      * Does a tri-rotation to the right.
      *
@@ -231,6 +231,16 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
         return node.height;
     }
 
+
+    /**
+     *
+     * // TODO change traversal / list implementation
+     * Recursively traverse the Tree.
+     *
+     * @param root
+     * @param start
+     * @param finish
+     */
     private void inOrderTraverse(Node<K, E> root,K start,K finish) {
 
         if (root != null) {
@@ -245,6 +255,18 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
     }
 
 
+    /**
+     * Returns a Singly linked list of all elements in the tree traversing from left to right.
+     *
+     * Runtime efficiency: O(n)
+     *
+     * @param start
+     *      Starting key to begin list from.
+     * @param finish
+     *      Finishing key to stop list at.
+     *
+     * @return
+     */
     public SinglyLinkedList<E> getList(K start, K finish) {
         list = new SinglyLinkedList<>();
         inOrderTraverse(root, start, finish);

@@ -2,16 +2,14 @@ package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
 
-
-
-
-
 /**
- * Generic Binary tree Implementation of a Data Tree.
+ * Generic unsorted Binary tree Implementation of a Data Tree.
  * Each node has, at most, two child nodes and is sorted by the Comparable.
  * insert and removal time.
  *
  * Created for COMP3506 Assignment 2 at the University Of Queensland.
+ *
+ * Memory Efficienty:
  *
  * @author Daniel Gormly, Student Number: 43503348
  *
@@ -40,6 +38,17 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     }
 
 
+    /**
+     * Checks if the tree contains a given key.
+     *
+     * Runtime efficieny: O(1)
+     *
+     * @param key
+     *      Key to check for.
+     * @return
+     *      True, key is in tree.
+     *      False, key is not in the tree
+     */
     public boolean contains(K key) {
         if (map.contains(key)) {
             return true;
@@ -49,10 +58,14 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
 
 
     /**
+     * Adds and element to the tree.
      *
+     * Runtime efficieny: O(logn)
      *
-     * @param element
+     * @param element,
+     *      Element to be stored in the tree.
      * @return
+     *      Node that element is stored in.
      */
     public Node<K, E> add(K key, E element) {
         Node<K, E> current;
@@ -82,6 +95,20 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
         }
     }
 
+
+    /**
+     * Adds a new node to the left child of the given tree.
+     *
+     * @param parent
+     *      Parent node to insert into.
+     * @param key
+     *      Key to add to node.
+     * @param element
+     *      Element to store.
+     * @return
+     *      Node created from insert.
+     *      Null if left child is taken.
+     */
     @Override
     public Node<K, E> addLeft(Node<K, E> parent, K key, E element) {
         if (parent == null || parent.left != null) {
@@ -96,6 +123,19 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     }
 
 
+    /**
+     * Adds a new node to the left child of the given tree.
+     *
+     * @param parent
+     *      Parent node to insert into.
+     * @param key
+     *      Key to add to node.
+     * @param element
+     *      Element to store.
+     * @return
+     *      Node created from insert.
+     *      Null if left child is taken.
+     */
     @Override
     public Node<K, E> addRight(Node<K, E> parent, K key, E element) {
 
@@ -111,39 +151,65 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     }
 
 
+    /**
+     * Highest node in the tree.
+     *
+     * Runtime efficiency: O(1)
+     *
+     * @return
+     */
     @Override
     public Node<K, E> getRoot() {
         return root;
     }
 
 
+    /**
+     * Retrieve a node at for a given key.
+     *
+     * @param key
+     *      Key to find element associated with.
+     * @return
+     *      Node associated with given key.
+     */
     @Override
     public Node<K, E> get(K key) {
         return map.get(key);
     }
 
 
-    // TODO update hashmap to update keys.
-    @Override
-    public Node<K, E> set(Node<K, E> position, E element) {
-        E e = position.element;
-        position.element = element;
-        return position;
-    }
-
-
+    /**
+     * Number of elements in the tree.
+     * @return
+     */
     @Override
     public int size() {
         return size;
     }
 
 
+    /**
+     * Checks if the tree is empty.
+     * @return
+     *  True, Tree is empty,
+     *  False, Tree is not empty.
+     */
     @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
 
+    /**
+     * Gets a node closes to the given node on the right side.
+     *
+     * Runtime efficiency: O(logn)
+     *
+     * @param key
+     *      Key to search for.
+     * @return
+     *      Node found on right side of given key.
+     */
     public Node<K, E> getFrom(K key) {
         Node<K, E> firstNode = getRoot();
         while (true) {
@@ -158,6 +224,16 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     }
 
 
+    /**
+     * Gets a node closes to the given node on the right side.
+     *
+     * Runtime efficiency: O(logn)
+     *
+     * @param key
+     *      Key to search for.
+     * @return
+     *      Node found on right side of given key.
+     */
     public Node<K, E> getTo(K key) {
         Node<K, E> firstNode = getRoot();
         while (true) {
@@ -175,7 +251,10 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     /**
      * Returns the right most element in the Array.
      *
+     * Runtime efficiency: O(Logn)
+     *
      * @return
+     *      Most left node in the tree.
      */
     public Node<K, E> getFirst() {
         Node<K, E> current = getRoot();
@@ -190,6 +269,14 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     }
 
 
+    /**
+     * Returns the most right node in the tree.
+     *
+     * Runtime efficiency: O(n)
+     *
+     * @return
+     *      Most right node in the tree.
+     */
     public Node<K, E> getLast() {
         Node<K, E> current = getRoot();
         if (current == null) {

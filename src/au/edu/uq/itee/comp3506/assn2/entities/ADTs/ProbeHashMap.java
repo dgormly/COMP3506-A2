@@ -105,7 +105,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     /**
      * Retrieves a value associated with a key.
      *
-     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     * Runtime Efficiency: Expected O(1) | Worst O(n)
      *
      * @param key
      *      the key to search for.
@@ -127,7 +127,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     /**
      * Stores a key-value pair.
      *
-     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     * Runtime Efficiency: Expected O(1) | Worst O(n)
      *
      * @param key
      *      Key to store
@@ -182,7 +182,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      * Linear-probing process to find the next available spot in
      * the map.
      *
-     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     * Runtime Efficiency: Expected O(1) | Worst O(n)
      *
      * @param key
      *      key used to find the initial position in the map.
@@ -220,7 +220,7 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
      * Starts with the initial hash position, searching
      * linear until found.
      *
-     * Runtime Efficiency: Expected O(1)    |   Worst O(n)
+     * Runtime Efficiency: Expected O(1) | Worst O(n)
      *
      * @param key
      *      Key to look find.

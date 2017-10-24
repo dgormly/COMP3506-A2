@@ -30,10 +30,6 @@ public interface AbstractBinaryTree<K extends Comparable<? super K>, E> {
 
     Node<K, E> get(K key);
 
-
-    Node<K,E> set(Node<K, E> position, E element);
-
-
     int size();
 
 
@@ -61,16 +57,6 @@ public interface AbstractBinaryTree<K extends Comparable<? super K>, E> {
             this.element = element;
         }
 
-        Node<K, E> getSibling() {
-            if (parent == null) {
-                return null;
-            }
-            if (parent.left == this) {
-                return parent.right;
-            } else {
-                return parent.left;
-            }
-        }
 
         public Node<K, E> getParent() {
             return parent;
@@ -90,14 +76,6 @@ public interface AbstractBinaryTree<K extends Comparable<? super K>, E> {
 
         public K getKey() {
             return key;
-        }
-
-        public int getHeight() {
-            return height;
-        }
-
-        public void setHeight(int height) {
-            this.height = height;
         }
     }
 }

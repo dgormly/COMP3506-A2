@@ -166,6 +166,7 @@ public final class AutoTester implements TestAPI {
 		return list;
 	}
 
+
 	@Override
 	public List<Integer> findConnectionFault(long dialler, LocalDateTime startTime, LocalDateTime endTime) {
 		AvlTree<LocalDateTime, CallRecord> tree = diallerMultiMap.getTree(dialler);
