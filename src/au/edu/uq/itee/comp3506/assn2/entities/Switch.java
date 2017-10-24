@@ -1,12 +1,15 @@
 package au.edu.uq.itee.comp3506.assn2.entities;
 
-import java.time.LocalDateTime;
 
 public class Switch {
 
     private int id;
-    private int Count = 0;
-    private LocalDateTime timeStamp;
+    private int count = 0;
+
+    public Switch(int id, int count) {
+        this.id = id;
+        this.count = count;
+    }
 
     public Switch(int id) {
         this.id = id;
@@ -16,19 +19,16 @@ public class Switch {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getCount() {
+        return count;
     }
 
-    public int getCount() {
-        return Count;
-    }
 
     public void setCount(int count) {
-        Count = count;
+        this.count = count;
     }
 
-    public LocalDateTime getTimeStamp() {
-        return timeStamp;
+    public void incrementCount() {
+        count++;
     }
 }

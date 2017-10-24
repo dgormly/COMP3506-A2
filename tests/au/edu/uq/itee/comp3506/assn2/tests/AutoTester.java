@@ -10,6 +10,7 @@ import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractBinaryTree.*;
 
 import au.edu.uq.itee.comp3506.assn2.entities.CallRecord;
 import au.edu.uq.itee.comp3506.assn2.entities.FileReader;
+import au.edu.uq.itee.comp3506.assn2.entities.Switch;
 
 /**
  * Hook class used by automated testing tool.
@@ -23,10 +24,10 @@ public final class AutoTester implements TestAPI {
 
 	/* Data sets. */
 	AvlTree<LocalDateTime, CallRecord> recordsTree;
-	AbstractMap<Integer, Integer> switchesMap;
+	ProbeHashMap<Integer, Integer> switchesMap;
 	TreeMultiMap<Long, LocalDateTime, CallRecord> diallerMultiMap;
 	TreeMultiMap<Long, LocalDateTime,CallRecord> receiverMultiMap;
-	AvlTree<Integer, Integer> connectionTree;
+	AvlTree<LocalDateTime, Switch> switchesTree;
 
 	FileReader fileReader = new FileReader(FileReader.SWITCHES_FILE, "call-records-short.txt");
 
@@ -34,6 +35,7 @@ public final class AutoTester implements TestAPI {
 	public AutoTester()  {
 		/* Read in data from data sets. */
 		switchesMap = fileReader.getSwitchesMap();
+		switchesTree = fileReader.getSwitchesTree();
 		recordsTree = fileReader.getAllCallRecords();
 		diallerMultiMap = fileReader.getDialerRecords();
 		receiverMultiMap = fileReader.getReceiverRecords();
@@ -227,6 +229,7 @@ public final class AutoTester implements TestAPI {
 
 	@Override
 	public List<Integer> findReceivingFault(long reciever, LocalDateTime startTime, LocalDateTime endTime) {
+
 		AvlTree<LocalDateTime, CallRecord> tree = receiverMultiMap.getTree(reciever);
 		List<Integer> list = new ArrayList<>();
 
@@ -252,28 +255,223 @@ public final class AutoTester implements TestAPI {
 		return list;
 	}
 
+
 	@Override
 	public int maxConnections() {
+		AvlTree<LocalDateTime, CallRecord> tree = recordsTree;
+		ProbeHashMap<Integer, Integer> map = switchesMap;
+		ProbeHashMap<Integer, Switch> tempMap = new ProbeHashMap<>(map.size());
 
-		return 0;
+
+		/* Temp switch */
+		Switch leadingSwitch = null;
+
+		if (tree == null) {
+			return 0;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
+		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+
+		if (linkedList.length == 0) {
+			return 0;
+		}
+
+		linkedList.getFirst();
+
+		Switch s;
+		CallRecord cr;
+
+		do {
+			cr = linkedList.getElement();
+			for (int i : cr.getConnectionPath()) {
+				if (!tempMap.contains(i)) {
+					s = new Switch(i);
+					tempMap.put(i, s);
+				} else {
+					s = tempMap.get(i);
+				}
+
+				s.incrementCount();
+
+				if (leadingSwitch == null) {
+					leadingSwitch = s;
+					continue;
+				}
+
+				if (s.getCount() == leadingSwitch.getCount()) {
+					leadingSwitch = s.getId() < leadingSwitch.getId() ? s : leadingSwitch;
+				} else if (s.getCount() > leadingSwitch.getCount()) {
+					leadingSwitch = s;
+				}
+			}
+		} while (linkedList.getNext() != null);
+
+		return leadingSwitch.getId();
 	}
 
 	@Override
 	public int maxConnections(LocalDateTime startTime, LocalDateTime endTime) {
-		// TODO Auto-generated method stub
-		return 0;
+		AvlTree<LocalDateTime, CallRecord> tree = recordsTree;
+		ProbeHashMap<Integer, Integer> map = switchesMap;
+		ProbeHashMap<Integer, Switch> tempMap = new ProbeHashMap<>(map.size());
+
+
+		/* Temp switch */
+		Switch leadingSwitch = null;
+
+		if (tree == null) {
+			return 0;
+		}
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(startTime, endTime);
+
+		if (linkedList.length == 0) {
+			return 0;
+		}
+
+		linkedList.getFirst();
+
+		Switch s;
+		CallRecord cr;
+
+		do {
+			cr = linkedList.getElement();
+			for (int i : cr.getConnectionPath()) {
+				if (!tempMap.contains(i)) {
+					s = new Switch(i);
+					tempMap.put(i, s);
+				} else {
+					s = tempMap.get(i);
+				}
+
+				s.incrementCount();
+
+				if (leadingSwitch == null) {
+					leadingSwitch = s;
+					continue;
+				}
+
+				if (s.getCount() == leadingSwitch.getCount()) {
+					leadingSwitch = s.getId() < leadingSwitch.getId() ? s : leadingSwitch;
+				} else if (s.getCount() > leadingSwitch.getCount()) {
+					leadingSwitch = s;
+				}
+			}
+		} while (linkedList.getNext() != null);
+
+		return leadingSwitch.getId();
 	}
 
 	@Override
 	public int minConnections() {
-		// TODO Auto-generated method stub
-		return 0;
+		AvlTree<LocalDateTime, CallRecord> tree = recordsTree;
+		ProbeHashMap<Integer, Integer> map = switchesMap;
+		ProbeHashMap<Integer, Switch> tempMap = new ProbeHashMap<>(map.size());
+
+
+		/* Temp switch */
+		Switch leadingSwitch = null;
+
+		if (tree == null) {
+			return 0;
+		}
+
+		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
+		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+
+		if (linkedList.length == 0) {
+			return 0;
+		}
+
+		linkedList.getFirst();
+
+		Switch s;
+		CallRecord cr;
+
+		do {
+			cr = linkedList.getElement();
+			for (int i : cr.getConnectionPath()) {
+				if (!tempMap.contains(i)) {
+					s = new Switch(i);
+					tempMap.put(i, s);
+				} else {
+					s = tempMap.get(i);
+				}
+
+				s.incrementCount();
+
+				if (leadingSwitch == null) {
+					leadingSwitch = s;
+					continue;
+				}
+
+				if (s.getCount() == leadingSwitch.getCount()) {
+					leadingSwitch = s.getId() < leadingSwitch.getId() ? s : leadingSwitch;
+				} else if (s.getCount() < leadingSwitch.getCount()) {
+					leadingSwitch = s;
+				}
+			}
+		} while (linkedList.getNext() != null);
+
+		return leadingSwitch.getId();
 	}
 
 	@Override
 	public int minConnections(LocalDateTime startTime, LocalDateTime endTime) {
-		// TODO Auto-generated method stub
-		return 0;
+		AvlTree<LocalDateTime, CallRecord> tree = recordsTree;
+		ProbeHashMap<Integer, Integer> map = switchesMap;
+		ProbeHashMap<Integer, Switch> tempMap = new ProbeHashMap<>(map.size());
+
+
+		/* Temp switch */
+		Switch leadingSwitch = null;
+
+		if (tree == null) {
+			return 0;
+		}
+
+		SinglyLinkedList<CallRecord> linkedList = tree.getList(startTime, endTime);
+
+		if (linkedList.length == 0) {
+			return 0;
+		}
+
+		linkedList.getFirst();
+
+		Switch s;
+		CallRecord cr;
+
+		do {
+			cr = linkedList.getElement();
+			for (int i : cr.getConnectionPath()) {
+				if (!tempMap.contains(i)) {
+					s = new Switch(i);
+					tempMap.put(i, s);
+				} else {
+					s = tempMap.get(i);
+				}
+
+				s.incrementCount();
+
+				if (leadingSwitch == null) {
+					leadingSwitch = s;
+					continue;
+				}
+
+				if (s.getCount() == leadingSwitch.getCount()) {
+					leadingSwitch = s.getId() < leadingSwitch.getId() ? s : leadingSwitch;
+				} else if (s.getCount() < leadingSwitch.getCount()) {
+					leadingSwitch = s;
+				}
+			}
+		} while (linkedList.getNext() != null);
+
+		return leadingSwitch.getId();
 	}
 
 	@Override
@@ -281,14 +479,11 @@ public final class AutoTester implements TestAPI {
 
 		List<CallRecord> list = new ArrayList<>();
 
-
 		SinglyLinkedList<CallRecord> linkedList = recordsTree.getList(startTime, endTime);
-
 
 		if (linkedList.length == 0) {
 			return list;
 		}
-
 
 		list.add(linkedList.getFirst());
 		while (linkedList.hasNext()) {

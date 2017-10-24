@@ -28,16 +28,20 @@ public class FileReaderTest {
         assertEquals("Wrong map size found.", fr.getSwitchesMap().size(), 1000);
     }
 
+
+    /**
+     * Checks if filereader successfully finds invalid records.
+     */
     @Test
     public void parseRecordsTest() {
         try {
             fr.importSwitches(FileReader.SWITCHES_FILE);
             List<String> records = FileReader.readFile("corruptRecords.txt");
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 9; i++) {
                 assertEquals("Expected null", fr.isValidRecord(records.get(i)), null);
             }
 
-            for (int i = 8; i < records.size(); i++) {
+            for (int i = 9; i < records.size(); i++) {
                 System.err.println(records.get(i));
                 assertEquals("Expected Valid", fr.isValidRecord(records.get(i)) != null, true);
             }
@@ -46,14 +50,5 @@ public class FileReaderTest {
             System.out.println("Failed to load test file.");
             e.printStackTrace();
         }
-
-        System.err.println("BREAKER");
     }
-
-    @Test
-    public void allRecordsTest() {
-
-    }
-
-
 }

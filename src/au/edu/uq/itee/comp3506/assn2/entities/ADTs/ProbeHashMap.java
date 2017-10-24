@@ -74,6 +74,9 @@ public class ProbeHashMap<K, V> implements AbstractMap<K, V> {
     @Override
     public boolean contains(K key) {
         int pos = key.hashCode();
+        if (size() == 0) {
+            return false;
+        }
         for (int i = 0; i < map.length; i++) {
             if (map[(pos + i) % map.length] == null) {
                 return false;

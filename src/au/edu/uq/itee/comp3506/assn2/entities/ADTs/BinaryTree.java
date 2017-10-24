@@ -28,7 +28,6 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
     protected int size = 0;
 
 
-    // TODO I don't think I need this
     protected Node<K, E> setRoot(K key, E element) {
         if (size() > 0) {
             return null;
@@ -38,6 +37,14 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
             size++;
             return root;
         }
+    }
+
+
+    public boolean contains(K key) {
+        if (map.contains(key)) {
+            return true;
+        }
+        return false;
     }
 
 

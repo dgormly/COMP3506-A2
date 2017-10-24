@@ -6,14 +6,10 @@ import au.edu.uq.itee.comp3506.assn2.entities.ADTs.AbstractMap;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
 public class FileReader {
-
-    /* TODO this needs to be changed to not use an ArrayList and should be implemented in the AutoTester.
-     */
 
     public final static String RECORD_FILE = "call-records.txt";
     public final static String SWITCHES_FILE = "switches.txt";
@@ -23,7 +19,9 @@ public class FileReader {
 
     private TreeMultiMap<Long, LocalDateTime, CallRecord> dialerRecords = new TreeMultiMap<>();
     private TreeMultiMap<Long, LocalDateTime, CallRecord> receiverRecords = new TreeMultiMap<>();
-    private ProbeHashMap<Integer, Integer>  switchesMap = new ProbeHashMap<>();
+    private ProbeHashMap<Integer, Integer> switchesMap = new ProbeHashMap<>();
+    private AvlTree<LocalDateTime, Switch> switchesTree = new AvlTree<>();
+
 
     private int crErrors = 0;
 
@@ -35,19 +33,16 @@ public class FileReader {
     public FileReader(String switchesPath, String recordsPath) {
         importSwitches(switchesPath);
         importRecords(recordsPath);
-
-        System.out.println("DONE");
     }
 
 
+    /**
+     * Empty constructor used for testing.
+     */
     public FileReader() {
 
     }
 
-
-    public int getCrErrors() {
-        return crErrors;
-    }
 
     /**
      * Reads in all records and converts them to a CallRecord Object.
@@ -90,6 +85,8 @@ public class FileReader {
      * Checks if the record is valid.
      * If it is faulty the record is added to a faulty tree.
      *
+     * Runtime Efficiency:
+     *
      * @param line
      *      Record to parse.
      *
@@ -125,11 +122,9 @@ public class FileReader {
 
             CallRecord cr = new CallRecord(dialer, receiver, diallerSwitch, receiverSwitch, path, stamp);
 
+            // Count switches
             for (int i: cr.getConnectionPath()) {
-                if (switchesMap.contains(i)) {
-                    int count = switchesMap.get(i) + 1;
-                    switchesMap.put(i, count);
-                } else {
+                if (!switchesMap.contains(i)) {
                     return null;
                 }
             }
@@ -181,12 +176,14 @@ public class FileReader {
             String line;
             // First line == number of switches. Prevents resize.
             line = br.readLine();
-            switchesMap = new ProbeHashMap<>();
             int mapSize = (int) Math.floor(Integer.parseInt(line) * 1.25);
             switchesMap = new ProbeHashMap<>(mapSize);
 
             while ((line = br.readLine()) != null) {
-                switchesMap.put(Integer.parseInt(line), 0);
+                int switchId = Integer.parseInt(line);
+                if (!switchesMap.contains(switchId)) {
+                    switchesMap.put(switchId, switchId);
+                }
             }
 
             br.close();
@@ -202,25 +199,76 @@ public class FileReader {
     }
 
 
-    public AbstractMap<Integer, Integer> getSwitchesMap() {
+    /**
+     * Returns a Map containing all switches loaded in from given switch file.
+     *
+     * Key: Switch's uniquie ID
+     *
+     * Value: Custom call record containing switch information.
+     *
+     * @return
+     *      Linearly probing hash map of switches.
+     */
+    public ProbeHashMap<Integer, Integer> getSwitchesMap() {
         return switchesMap;
     }
 
 
+    /**
+     * Returns a Linearly probing multi-map containing a tree holding the Timestamp
+     * call record information sorted by receiver.
+     *
+     *
+     * @return
+     *      MultiMap:
+     *      Key 1 =  Dialler number
+     *      Key 2 = Time Stamp
+     *      Value = Corresponding call record.
+     *
+     */
     public TreeMultiMap<Long, LocalDateTime, CallRecord> getDialerRecords() {
         return dialerRecords;
     }
 
 
+    /**
+     * Returns a Linearly probing multi-map containing a tree holding the Timestamp
+     * call record information sorted by receiver.
+     *
+     *
+     * @return
+     *      MultiMap:
+     *      Key 1 =  Dialler number
+     *      Key 2 = Time Stamp
+     *      Value = Corresponding call record.
+     *
+     */
     public TreeMultiMap<Long, LocalDateTime, CallRecord> getReceiverRecords() {
         return receiverRecords;
     }
 
 
+    /**
+     * AVL tree containing all records found in the given records file sorted by Time Stamp.
+     * @return
+     *      Data tree,
+     *      Null if no records found.
+     */
     public AvlTree<LocalDateTime, CallRecord> getAllCallRecords() {
         return recordsTree;
     }
 
+
+    /**
+     * AVL tree containing all switches found in the given records file sorted by time stamp.
+     *
+     * @return
+     *  Data tree,
+     *  Null if no switch found.
+     */
+    public AvlTree<LocalDateTime, Switch> getSwitchesTree() {
+        return switchesTree;
+    }
 
     /**
      * Reads each line in the given textfile name from data folder into an List.
