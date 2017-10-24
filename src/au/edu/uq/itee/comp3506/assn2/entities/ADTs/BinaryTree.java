@@ -22,6 +22,7 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
 
     protected Node<K, E> root = null;
     protected ProbeHashMap<K, Node<K, E>> map = new ProbeHashMap<>();
+    protected SinglyLinkedList<E> list = new SinglyLinkedList<>();
 
     protected int size = 0;
 
@@ -286,5 +287,37 @@ public class BinaryTree<K extends Comparable<? super K>, E> implements AbstractB
             current = current.right;
         }
         return current;
+    }
+
+
+    public SinglyLinkedList<E> getRange(K start,K end) {
+        list = new SinglyLinkedList<>();
+        traverseRange(root, start, end, list);
+        return list;
+    }
+
+
+    private void traverseRange(Node<K, E> position, K start, K end, SinglyLinkedList<E> list) {
+        if (position.left != null) {
+            K key = position.left.key;
+            if (key.compareTo(key) >= 0) {
+                traverseRange(position.left, start, end, list);
+            } else if (position.left.right != null) {
+                traverseRange(position.left.right, start, end, list);
+            }
+        }
+
+        if (position.key.compareTo(start) >= 0 && position.key.compareTo(end) <= 0) {
+            list.addToEnd(position.element);
+        }
+
+        if (position.right != null) {
+            K key = position.getRight().getKey();
+            if (key.compareTo(end) <= 0) {
+                traverseRange(position.right, start, end, list);
+            } else if (position.right.left != null) {
+                traverseRange(position.right.left, start, end, list);
+            }
+        }
     }
 }

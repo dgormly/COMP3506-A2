@@ -1,6 +1,7 @@
 package au.edu.uq.itee.comp3506.assn2.entities.ADTs;
 
 
+import java.util.LinkedList;
 
 /**
  * A balanced implementation of a Binary tree allowing for a more consistant O(Logn)
@@ -229,47 +230,5 @@ public class AvlTree<K extends Comparable<? super K>, E> extends BinaryTree<K, E
     private int changeHeight(Node<K, E> node) {
         node.height = 1 + Math.max(height(node.left), height(node.right));
         return node.height;
-    }
-
-
-    /**
-     *
-     * // TODO change traversal / list implementation
-     * Recursively traverse the Tree.
-     *
-     * @param root
-     * @param start
-     * @param finish
-     */
-    private void inOrderTraverse(Node<K, E> root,K start,K finish) {
-
-        if (root != null) {
-            inOrderTraverse(root.left, start, finish);
-
-            if (root.getKey().compareTo(start) >= 0 && root.getKey().compareTo(finish) <= 0) {
-                list.addToEnd(root.getElement());
-            }
-
-            inOrderTraverse(root.right, start, finish);
-        }
-    }
-
-
-    /**
-     * Returns a Singly linked list of all elements in the tree traversing from left to right.
-     *
-     * Runtime efficiency: O(n)
-     *
-     * @param start
-     *      Starting key to begin list from.
-     * @param finish
-     *      Finishing key to stop list at.
-     *
-     * @return
-     */
-    public SinglyLinkedList<E> getList(K start, K finish) {
-        list = new SinglyLinkedList<>();
-        inOrderTraverse(root, start, finish);
-        return list;
     }
 }

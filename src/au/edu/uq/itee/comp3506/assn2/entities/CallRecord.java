@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
  * Represents a single phone call connection attempt.
  * 
  * @author Richard Thomas
- * @
  *
  */
 public class CallRecord {

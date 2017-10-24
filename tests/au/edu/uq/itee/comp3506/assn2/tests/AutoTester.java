@@ -180,7 +180,7 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> firstNode = tree.getFrom(startTime);
 		Node<LocalDateTime, CallRecord> lastNode = tree.getFrom(endTime);
 
-		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+		SinglyLinkedList<CallRecord> linkedList = tree.getRange(firstNode.getKey(), lastNode.getKey());
 
 		if (linkedList.length == 0) {
 			return list;
@@ -191,7 +191,6 @@ public final class AutoTester implements TestAPI {
 			int fault = linkedList.getElement().getFault();
 			if (fault != -1) {
 				list.add(fault);
-				fault = 0;
 			}
 		} while (linkedList.getNext() != null);
 
@@ -211,7 +210,7 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
 		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
 
-		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+		SinglyLinkedList<CallRecord> linkedList = tree.getRange(firstNode.getKey(), lastNode.getKey());
 
 		if (linkedList.length == 0) {
 			return list;
@@ -238,7 +237,7 @@ public final class AutoTester implements TestAPI {
 			return list;
 		}
 
-		SinglyLinkedList<CallRecord> linkedList = tree.getList(startTime, endTime);
+		SinglyLinkedList<CallRecord> linkedList = tree.getRange(startTime, endTime);
 
 		if (linkedList.length == 0) {
 			return list;
@@ -274,7 +273,7 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
 		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
 
-		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+		SinglyLinkedList<CallRecord> linkedList = tree.getRange(firstNode.getKey(), lastNode.getKey());
 
 		if (linkedList.length == 0) {
 			return 0;
@@ -327,7 +326,7 @@ public final class AutoTester implements TestAPI {
 			return 0;
 		}
 
-		SinglyLinkedList<CallRecord> linkedList = tree.getList(startTime, endTime);
+		SinglyLinkedList<CallRecord> linkedList = tree.getRange(startTime, endTime);
 
 		if (linkedList.length == 0) {
 			return 0;
@@ -383,7 +382,7 @@ public final class AutoTester implements TestAPI {
 		Node<LocalDateTime, CallRecord> firstNode = tree.getFirst();
 		Node<LocalDateTime, CallRecord> lastNode = tree.getLast();
 
-		SinglyLinkedList<CallRecord> linkedList = tree.getList(firstNode.getKey(), lastNode.getKey());
+		SinglyLinkedList<CallRecord> linkedList = tree.getRange(firstNode.getKey(), lastNode.getKey());
 
 		if (linkedList.length == 0) {
 			return 0;
@@ -436,7 +435,7 @@ public final class AutoTester implements TestAPI {
 			return 0;
 		}
 
-		SinglyLinkedList<CallRecord> linkedList = tree.getList(startTime, endTime);
+		SinglyLinkedList<CallRecord> linkedList = tree.getRange(startTime, endTime);
 
 		if (linkedList.length == 0) {
 			return 0;
@@ -480,7 +479,7 @@ public final class AutoTester implements TestAPI {
 
 		List<CallRecord> list = new ArrayList<>();
 
-		SinglyLinkedList<CallRecord> linkedList = recordsTree.getList(startTime, endTime);
+		SinglyLinkedList<CallRecord> linkedList = recordsTree.getRange(startTime, endTime);
 
 		if (linkedList.length == 0) {
 			return list;

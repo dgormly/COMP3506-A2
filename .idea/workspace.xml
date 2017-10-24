@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" line="134" mnemonic="8" />
+    <bookmark url="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" line="135" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19704f59-8f57-41f3-aacf-f8367bc9b451" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" afterPath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java" afterPath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/CallRecord.java" afterPath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/CallRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java" afterPath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/Switch.java" afterPath="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/Switch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" afterPath="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,22 +64,22 @@
           <file leaf-file-name="AutoTester.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="444">
-                  <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+                <state relative-caret-position="261">
+                  <caret line="481" column="54" lean-forward="true" selection-start-line="481" selection-start-column="54" selection-end-line="481" selection-end-column="54" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#12096#12097#0" expanded="true" />
-                    <element signature="e#12137#12138#0" expanded="true" />
+                    <element signature="e#12089#12090#0" expanded="true" />
+                    <element signature="e#12130#12131#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AvlTree.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="AvlTree.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="259" column="6" lean-forward="true" selection-start-line="259" selection-start-column="6" selection-end-line="259" selection-end-column="6" />
+                <state relative-caret-position="154">
+                  <caret line="207" column="16" lean-forward="false" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -88,8 +88,8 @@
           <file leaf-file-name="Switch.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/Switch.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+                <state relative-caret-position="121">
+                  <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
                   <folding>
                     <element signature="e#329#330#0" expanded="true" />
                     <element signature="e#357#358#0" expanded="true" />
@@ -124,14 +124,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BinaryTree.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BinaryTree.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="558">
-                  <caret line="288" column="5" lean-forward="true" selection-start-line="288" selection-start-column="5" selection-end-line="288" selection-end-column="5" />
+                <state relative-caret-position="213">
+                  <caret line="298" column="0" lean-forward="true" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
                   <folding>
-                    <element signature="e#4012#4013#0" expanded="true" />
-                    <element signature="e#4039#4040#0" expanded="true" />
+                    <element signature="e#4079#4080#0" expanded="true" />
+                    <element signature="e#4106#4107#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -186,13 +186,13 @@
           <file leaf-file-name="CallRecord.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/CallRecord.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="107">
-                  <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+                <state relative-caret-position="-430">
+                  <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
                   <folding>
-                    <element signature="e#1356#1357#0" expanded="true" />
-                    <element signature="e#1377#1378#0" expanded="true" />
-                    <element signature="e#1666#1667#0" expanded="true" />
-                    <element signature="e#1689#1690#0" expanded="true" />
+                    <element signature="e#1351#1352#0" expanded="true" />
+                    <element signature="e#1372#1373#0" expanded="true" />
+                    <element signature="e#1661#1662#0" expanded="true" />
+                    <element signature="e#1684#1685#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -228,15 +228,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FileReaderTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.java">
+          <file leaf-file-name="SinglyLinkedListTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/SinglyLinkedListTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="563">
-                  <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#337#338#0" expanded="true" />
-                    <element signature="e#374#375#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -310,9 +308,13 @@
       <find>increme</find>
       <find>DEF</find>
       <find>switchesMap</find>
-      <find>contains</find>
       <find>104</find>
+      <find>getList</find>
+      <find>contains</find>
     </findStrings>
+    <replaceStrings>
+      <replace>getRange</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -354,16 +356,16 @@
         <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AvlTreeTest.java" />
         <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/BinaryTreeTest.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/SinglyLinkedList.java" />
-        <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" />
         <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/TestShort.java" />
         <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/FileReaderTest.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractBinaryTree.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/ProbeHashMap.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/Switch.java" />
-        <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/CallRecord.java" />
+        <option value="$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java" />
         <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java" />
+        <option value="$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java" />
       </list>
     </option>
   </component>
@@ -740,13 +742,19 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestShort - 2017.10.24 at 16h 30m 16s.xml">
-      <configuration name="TestShort" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestShort - 2017.10.24 at 16h 43m 39s.xml">
       <configuration name="TestShort" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestShort - 2017.10.24 at 16h 46m 12s.xml">
+      <configuration name="TestShort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestShort - 2017.10.24 at 19h 38m 08s.xml">
+      <configuration name="TestShort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestShort - 2017.10.24 at 19h 40m 09s.xml">
+      <configuration name="TestShort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestShort - 2017.10.24 at 19h 41m 09s.xml">
       <configuration name="TestShort" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestShort_leastConnectedInSubsetOfRecords2 - 2017.10.24 at 16h 44m 55s.xml">
@@ -757,12 +765,6 @@
     </history-entry>
     <history-entry file="TestShort_leastConnectedInSubsetOfRecords2 - 2017.10.24 at 16h 45m 59s.xml">
       <configuration name="TestShort.leastConnectedInSubsetOfRecords2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort_mostConnectedInSingleRecord - 2017.10.24 at 16h 30m 05s.xml">
-      <configuration name="TestShort.mostConnectedInSingleRecord" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestShort_mostConnectedInSingleRecord - 2017.10.24 at 16h 30m 31s.xml">
-      <configuration name="TestShort.mostConnectedInSingleRecord" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestShort_mostConnectedInSingleRecord - 2017.10.24 at 16h 43m 21s.xml">
       <configuration name="TestShort.mostConnectedInSingleRecord" configurationId="JUnit" />
@@ -871,45 +873,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java</url>
-          <line>225</line>
+          <line>224</line>
           <properties />
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java</url>
-          <line>213</line>
+          <line>212</line>
           <properties />
           <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java</url>
-          <line>212</line>
+          <line>213</line>
           <properties />
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java</url>
-          <line>240</line>
+          <line>241</line>
           <properties />
           <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java</url>
-          <line>262</line>
-          <properties />
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java</url>
-          <line>335</line>
-          <properties />
-          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="156" />
@@ -934,7 +918,7 @@
         <state relative-caret-position="570">
           <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
           <folding>
-            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -991,14 +975,6 @@
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/DoublyLinkedList.java" />
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractAvlTree.java" />
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/SinglyLinkedListTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -1153,42 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/call-records-short.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="645" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/switches.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="94" column="3" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12096#12097#0" expanded="true" />
-            <element signature="e#12137#12138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/api/TestAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -1237,23 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/Switch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/FileReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1421">
@@ -1289,26 +1212,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/TimeExampleUsage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="259" column="6" lean-forward="true" selection-start-line="259" selection-start-column="6" selection-end-line="259" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AbstractMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/switches.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="94" column="3" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/TimeExampleUsage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1326,27 +1257,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/SinglyLinkedListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/au/edu/uq/itee/comp3506/assn2/tests/AutoTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="481" column="54" lean-forward="true" selection-start-line="481" selection-start-column="54" selection-end-line="481" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12089#12090#0" expanded="true" />
+            <element signature="e#12130#12131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/Switch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/CallRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="-430">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1351#1352#0" expanded="true" />
+            <element signature="e#1372#1373#0" expanded="true" />
+            <element signature="e#1661#1662#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/call-records-short.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="645" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/BinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="288" column="5" lean-forward="true" selection-start-line="288" selection-start-column="5" selection-end-line="288" selection-end-column="5" />
+        <state relative-caret-position="213">
+          <caret line="298" column="0" lean-forward="true" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
           <folding>
-            <element signature="e#4012#4013#0" expanded="true" />
-            <element signature="e#4039#4040#0" expanded="true" />
+            <element signature="e#4079#4080#0" expanded="true" />
+            <element signature="e#4106#4107#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/au/edu/uq/itee/comp3506/assn2/entities/ADTs/AvlTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="207" column="16" lean-forward="false" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
